@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				&copy; Nathan M. House <?php echo date( 'Y' ); ?>
+				&copy; Nathan M. House test <?php echo date( 'Y' ); ?>
 			</div><!-- .col -->
 		</div><!-- .row -->
 	</div><!-- .container -->
