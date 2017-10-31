@@ -17,10 +17,12 @@ if ( have_rows( 'flexible_content' ) ) :
 		$i++;
 
 		// Get the generic values
-		$title   = get_sub_field( 'title' );
-		$content = get_sub_field( 'content' );
-		$padding = get_sub_field( 'padding' );
-		$margin  = get_sub_field( 'margin' );
+		$title            = get_sub_field( 'title' );
+		$content          = get_sub_field( 'content' );
+		$background_color = get_sub_field( 'background_color' );
+		$image            = get_sub_field( 'image' );
+		$padding          = get_sub_field( 'padding' );
+		$margin           = get_sub_field( 'margin' );
 
 		// Set up the row layout
 		$row_layout = get_row_layout();

@@ -8,9 +8,12 @@
 
 ?>
 
-<section class="content-row <?php 
-echo "$content_row_class $content_row_count_class $padding $margin";
-?>">
+<section 
+	class="content-row 
+	<?php 
+	echo esc_attr( "$content_row_class $content_row_count_class $padding $margin" );
+	?>"
+	style="background-color: <?php echo esc_attr( $background_color ); ?>">
 
 	<div class="container">
 

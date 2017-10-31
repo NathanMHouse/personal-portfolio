@@ -125,7 +125,7 @@ function portfolio_scripts() {
 	wp_enqueue_style( 'portfolio-styles', get_template_directory_uri() . '/style.min.css' );
 
 	// Enqueue custom styles
-	wp_enqueue_style( 'portfolio-styles-custom', get_template_directory_uri() . '/assets/css/portfolio-styles.min.css' );
+	wp_enqueue_style( 'portfolio-styles-custom', get_template_directory_uri() . '/assets/css/portfolio-styles.css' );
 
 	// Enqueue grid styles (Bootstrap)
 	wp_enqueue_style( 'portfolio-styles-grid', get_template_directory_uri() . '/assets/css/portfolio-styles-grid.min.css' );
