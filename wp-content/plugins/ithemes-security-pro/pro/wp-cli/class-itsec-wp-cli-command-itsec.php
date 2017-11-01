@@ -159,8 +159,8 @@ class ITSEC_WP_CLI_Command_ITSEC extends WP_CLI_Command {
 		/** @var ITSEC_Lockout $itsec_lockout */
 		global $itsec_lockout, $itsec_globals;
 
-		$host_locks = $itsec_lockout->get_lockouts( 'host', true );
-		$user_locks = $itsec_lockout->get_lockouts( 'user', true );
+		$host_locks = $itsec_lockout->get_lockouts( 'host' );
+		$user_locks = $itsec_lockout->get_lockouts( 'user' );
 
 		if ( empty( $host_locks ) && empty( $user_locks ) ) {
 

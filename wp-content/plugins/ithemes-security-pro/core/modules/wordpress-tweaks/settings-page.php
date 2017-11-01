@@ -38,6 +38,12 @@ final class ITSEC_WordPress_Tweaks_Settings_Page extends ITSEC_Module_Settings_P
 			'default-access'  => esc_html__( 'Default Access', 'it-l10n-ithemes-security-pro' ),
 		);
 
+		$valid_user_login_types = array(
+			'both'     => esc_html__( 'Email Address and Username (default)', 'it-l10n-ithemes-security-pro' ),
+			'email'    => esc_html__( 'Email Address Only', 'it-l10n-ithemes-security-pro' ),
+			'username' => esc_html__( 'Username Only', 'it-l10n-ithemes-security-pro' ),
+		);
+
 ?>
 	<p><?php esc_html_e( 'Note: These settings are listed as advanced because they block common forms of attacks but they can also block legitimate plugins and themes that rely on the same techniques. When activating the settings below, we recommend enabling them one by one to test that everything on your site is still working as expected.', 'it-l10n-ithemes-security-pro' ); ?></p>
 	<p><?php esc_html_e( 'Remember, some of these settings might conflict with other plugins or themes, so test your site after enabling each setting.', 'it-l10n-ithemes-security-pro' ); ?></p>
@@ -138,6 +144,18 @@ final class ITSEC_WordPress_Tweaks_Settings_Page extends ITSEC_Module_Settings_P
 				<?php $form->add_checkbox( 'block_tabnapping' ); ?>
 				<label for="itsec-wordpress-tweaks-block_tabnapping"><?php esc_html_e( 'Alter target="_blank" links to protect against tabnapping', 'it-l10n-ithemes-security-pro' ); ?></label>
 				<p class="description"><?php printf( wp_kses( __( 'Enabling this feature helps protect visitors to this site (including logged in users) from phishing attacks launched by a linked site. Details on tabnapping via target="_blank" links can be found in <a href="%s">this article</a>.', 'it-l10n-ithemes-security-pro' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( 'https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/' ) ); ?></p>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"><label for="itsec-wordpress-tweaks-valid_user_login_type"><?php esc_html_e( 'Login with Email Address or Username', 'it-l10n-ithemes-security-pro' ); ?></label></th>
+			<td>
+				<p><?php esc_html_e( 'By default, WordPress allows users to log in using either an email address or username. This setting allows you to restrict logins to only accept email addresses or usernames.', 'it-l10n-ithemes-security-pro' ); ?></p>
+				<?php $form->add_select( 'valid_user_login_type', $valid_user_login_types ); ?>
+				<ul>
+					<li><?php echo wp_kses( __( '<strong>Email Address and Username (Default)</strong> - Allow users to log in using their user\'s email address or username. This is the default WordPress behavior.', 'it-l10n-ithemes-security-pro' ), array( 'strong' => array() ) ); ?></li>
+					<li><?php echo wp_kses( __( '<strong>Email Address Only</strong> - Users can only log in using their user\'s email address. This disables logging in using a username.', 'it-l10n-ithemes-security-pro' ), array( 'strong' => array() ) ); ?></li>
+					<li><?php echo wp_kses( __( '<strong>Username Only</strong> - Users can only log in using their user\'s username. This disables logging in using an email address.', 'it-l10n-ithemes-security-pro' ), array( 'strong' => array() ) ); ?></li>
+				</ul>
 			</td>
 		</tr>
 	</table>

@@ -39,6 +39,8 @@ final class ITSEC_Security_Check_Settings_Page extends ITSEC_Module_Settings_Pag
 			require_once( dirname( __FILE__ ) . '/scanner.php' );
 
 			ITSEC_Security_Check_Scanner::activate_network_brute_force( $_POST['data'] );
+		} else {
+			do_action( "itsec-security-check-{$data['method']}", $_POST['data'] );
 		}
 	}
 

@@ -43,10 +43,12 @@ final class ITSEC_Version_Management {
 			add_filter( 'auto_update_theme', '__return_true', 20 );
 		}
 
-		if ( $this->settings['automatic_update_emails'] ) {
-			add_filter( 'automatic_updates_send_debug_email', '__return_true' );
-			add_filter( 'automatic_updates_debug_email', array( $this, 'filter_automatic_updates_debug_email' ) );
-		}
+		add_filter( 'automatic_updates_send_debug_email', array( $this, 'maybe_enable_automatic_updates_debug_email' ) );
+		add_filter( 'automatic_updates_debug_email', array( $this, 'filter_automatic_updates_debug_email' ) );
+
+		add_filter( 'itsec_notifications', array( $this, 'register_notifications' ) );
+		add_filter( 'itsec_old-site-scan_notification_strings', array( $this, 'old_site_scan_strings' ) );
+		add_filter( 'itsec_automatic-updates-debug_notification_strings', array( $this, 'automatic_updates_strings' ) );
 	}
 
 	public static function get_instance() {
@@ -184,14 +186,103 @@ final class ITSEC_Version_Management {
 	}
 
 	/**
+	 * Enable the automatic debug email if it is enabled in the Notification Center.
+	 *
+	 * @param bool $enabled
+	 *
+	 * @return bool
+	 */
+	public function maybe_enable_automatic_updates_debug_email( $enabled ) {
+
+		// If the debug email is already enabled, don't disable it.
+		if ( ! $enabled ) {
+			$enabled = ITSEC_Core::get_notification_center()->is_notification_enabled( 'automatic-updates-debug' );
+		}
+
+		return $enabled;
+	}
+
+	/**
 	 * Set automatic update email addresses.
+	 *
+	 * @param array $email
+	 *
+	 * @return array
 	 */
 	public function filter_automatic_updates_debug_email( $email ) {
-		require_once( dirname( __FILE__ ) . '/utility.php' );
 
-		$email['to'] = ITSEC_VM_Utility::get_email_addresses();
+		if ( ITSEC_Core::get_notification_center()->is_notification_enabled( 'automatic-updates-debug' ) ) {
+			$email['to'] = ITSEC_Core::get_notification_center()->get_recipients( 'automatic-updates-debug' );
+		}
 
 		return $email;
+	}
+
+	public function register_notifications( $notifications ) {
+
+		// Ask for the settings again in case of saving and adding new notifications so the cache clear happens.
+		$settings = ITSEC_Modules::get_settings( 'version-management' );
+
+		if ( $settings['wordpress_automatic_updates'] || $settings['plugin_automatic_updates'] || $settings['theme_automatic_updates'] ) {
+			$notifications['automatic-updates-debug'] = array(
+				'recipient' => ITSEC_Notification_Center::R_USER_LIST,
+				'optional'  => true,
+				'module'    => 'version-management',
+			);
+		}
+
+		if ( $settings['scan_for_old_wordpress_sites'] ) {
+			$notifications['old-site-scan'] = array(
+				'slug'             => 'old-site-scan',
+				'recipient'        => ITSEC_Notification_Center::R_USER_LIST,
+				'schedule'         => ITSEC_Notification_Center::S_CONFIGURABLE,
+				'subject_editable' => true,
+				'module'           => 'version-management',
+				'template'         => array(
+					array(
+						'header',
+						esc_html__( 'Outdated Site Scan', 'it-l10n-ithemes-security-pro' ),
+						/* translators: %s is a date range ( 1/1/16 - 2/1/16 ) */
+						sprintf( esc_html__( 'Outdated sites detected on %s', 'it-l10n-ithemes-security-pro' ), '<b>{{ $_period }}</b>' )
+					),
+					array(
+						'table',
+						array(
+							esc_html__( 'File Path', 'it-l10n-ithemes-security-pro' ),
+							esc_html__( 'WordPress Version', 'it-l10n-ithemes-security-pro' )
+						),
+						array(
+							':data.path',
+							':data.version',
+						),
+					),
+					array(
+						'footer'
+					),
+				),
+			);
+		}
+
+		return $notifications;
+	}
+
+	public function automatic_updates_strings() {
+		return array(
+			'label'       => esc_html__( 'Automatic Updates Info', 'it-l10n-ithemes-security-pro' ),
+			'description' => sprintf(
+				esc_html__( 'The %sVersion Management%s module will send an email with details about any automatic updates that have been performed.', 'it-l10n-ithemes-security-pro' ),
+				'<a href="#" data-module-link="version-management">',
+				'</a>'
+			)
+		);
+	}
+
+	public function old_site_scan_strings() {
+		return array(
+			'label'       => esc_html__( 'Old Site Scan', 'it-l10n-ithemes-security-pro' ),
+			'description' => sprintf( esc_html__( 'The %1$sVersion Management%2$s module will send an email if it detects outdated WordPress sites on your hosting account. A single outdated WordPress site with a vulnerability could allow attackers to compromise all the other sites on the same hosting account.', 'it-l10n-ithemes-security-pro' ), '<a href="#" data-module-link="version-management">', '</a>' ),
+			'subject'     => esc_html__( 'Old sites found on hosting account', 'it-l10n-ithemes-security-pro' )
+		);
 	}
 }
 ITSEC_Version_Management::get_instance();

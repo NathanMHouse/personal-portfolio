@@ -12,6 +12,7 @@ final class ITSEC_Security_Check_Scanner {
 			'ban-users'           => __( 'Banned Users', 'it-l10n-ithemes-security-pro' ),
 			'backup'              => __( 'Database Backups', 'it-l10n-ithemes-security-pro' ),
 			'brute-force'         => __( 'Local Brute Force Protection', 'it-l10n-ithemes-security-pro' ),
+			'magic-links'         => __( 'Magic Links', 'it-l10n-ithemes-security-pro' ),
 			'malware-scheduling'  => __( 'Malware Scan Scheduling', 'it-l10n-ithemes-security-pro' ),
 			'network-brute-force' => __( 'Network Brute Force Protection', 'it-l10n-ithemes-security-pro' ),
 			'strong-passwords'    => __( 'Strong Passwords', 'it-l10n-ithemes-security-pro' ),
@@ -39,14 +40,16 @@ final class ITSEC_Security_Check_Scanner {
 		require_once( dirname( __FILE__ ) . '/feedback.php' );
 
 		self::$feedback = new ITSEC_Security_Check_Feedback();
-
 		self::$available_modules = ITSEC_Modules::get_available_modules();
+
+		do_action( 'itsec-security-check-before-default-checks', self::$feedback, self::$available_modules );
 
 		self::enforce_activation( 'ban-users', __( 'Banned Users', 'it-l10n-ithemes-security-pro' ) );
 		self::enforce_setting( 'ban-users', 'enable_ban_lists', true, __( 'Enabled the Enable Ban Lists setting in Banned Users.', 'it-l10n-ithemes-security-pro' ) );
 
 		self::enforce_activation( 'backup', __( 'Database Backups', 'it-l10n-ithemes-security-pro' ) );
 		self::enforce_activation( 'brute-force', __( 'Local Brute Force Protection', 'it-l10n-ithemes-security-pro' ) );
+		self::enforce_activation( 'magic-links', __( 'Magic Links', 'it-l10n-ithemes-security-pro' ) );
 		self::enforce_activation( 'malware-scheduling', __( 'Malware Scan Scheduling', 'it-l10n-ithemes-security-pro' ) );
 		self::enforce_setting( 'malware-scheduling', 'email_notifications', true, __( 'Enabled the Email Notifications setting in Malware Scan Scheduling.', 'it-l10n-ithemes-security-pro' ) );
 
@@ -66,6 +69,8 @@ final class ITSEC_Security_Check_Scanner {
 		self::enforce_setting( 'wordpress-tweaks', 'rest_api', 'restrict-access', __( 'Changed the REST API setting in WordPress Tweaks to "Restricted Access".', 'it-l10n-ithemes-security-pro' ) );
 
 		self::enforce_setting( 'global', 'write_files', true, __( 'Enabled the Write to Files setting in Global Settings.', 'it-l10n-ithemes-security-pro' ) );
+
+		do_action( 'itsec-security-check-after-default-checks', self::$feedback, self::$available_modules );
 	}
 
 	private static function add_network_brute_force_signup() {

@@ -31,7 +31,11 @@ function itsecInvisibleRecaptchaLoad() {
 			jQuery( 'textarea[name="g-recaptcha-response"]', $form ).val( token );
 
 			// Properly submit forms that have an input with a name of "submit".
-			HTMLFormElement.prototype.submit.call( $form.get( 0 ) );
+			if ( jQuery( ':input[name="submit"]', $form ).length ) {
+				HTMLFormElement.prototype.submit.call( $form.get( 0 ) );
+			} else {
+				$form.trigger( 'submit' );
+			}
 		};
 	};
 

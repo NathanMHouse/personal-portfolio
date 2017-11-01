@@ -101,9 +101,22 @@ class Two_Factor_Email extends Two_Factor_Provider {
 	public function generate_and_email_token( $user ) {
 		$token = $this->generate_token( $user->ID );
 
-		$subject = wp_strip_all_tags( sprintf( __( 'Your login confirmation code for %s', 'it-l10n-ithemes-security-pro' ), get_bloginfo( 'name' ) ) );
-		$message = wp_strip_all_tags( sprintf( __( 'Enter %s to log in.', 'it-l10n-ithemes-security-pro' ), $token ) );
-		wp_mail( $user->user_email, $subject, $message );
+		$nc = ITSEC_Core::get_notification_center();
+
+		$message = ITSEC_Lib::replace_tags( $nc->get_message( 'two-factor-email' ), array(
+			'username'     => $user->user_login,
+			'display_name' => $user->display_name,
+		) );
+
+		$mail = $nc->mail();
+		$mail->set_recipients( array( $user->user_email ) );
+
+		$mail->add_header( esc_html__( 'Verification Code', 'it-l10n-ithemes-security-pro' ), '', true );
+		$mail->add_text( $message );
+		$mail->add_large_code( $token );
+		$mail->add_user_footer();
+
+		$nc->send( 'two-factor-email', $mail );
 	}
 
 	/**
@@ -179,5 +192,4 @@ class Two_Factor_Email extends Two_Factor_Provider {
 	public function description() {
 		echo '<p class="description">' . __( 'Time-sensitive codes are supplied via email to the email address associated with the user\'s account. Note: This WordPress site must support sending emails for this method to work (for example, sending WordPress-generated emails such as password reset and new account emails).', 'it-l10n-ithemes-security-pro' ) . '</p>';
 	}
-
 }
