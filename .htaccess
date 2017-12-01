@@ -188,12 +188,17 @@
 	SetEnvIF X-FORWARDED-FOR "^31\.211\.86\.13$" DenyAccess
 	SetEnvIF X-CLUSTER-CLIENT-IP "^31\.211\.86\.13$" DenyAccess
 
+	SetEnvIF REMOTE_ADDR "^213\.183\.51\.28$" DenyAccess
+	SetEnvIF X-FORWARDED-FOR "^213\.183\.51\.28$" DenyAccess
+	SetEnvIF X-CLUSTER-CLIENT-IP "^213\.183\.51\.28$" DenyAccess
+
 	<IfModule mod_authz_core.c>
 		<RequireAll>
 			Require all granted
 			Require not env DenyAccess
 			Require not ip 198.204.228.226
 			Require not ip 31.211.86.13
+			Require not ip 213.183.51.28
 		</RequireAll>
 	</IfModule>
 	<IfModule !mod_authz_core.c>
@@ -202,6 +207,7 @@
 		Deny from env=DenyAccess
 		Deny from 198.204.228.226
 		Deny from 31.211.86.13
+		Deny from 213.183.51.28
 	</IfModule>
 
 	# Disable Directory Browsing - Security > Settings > System Tweaks > Directory Browsing
