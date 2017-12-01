@@ -18,13 +18,13 @@ $pattern        = '/Content-type:|Bcc:|Cc:|<script/i';
 $myemail        = 'nathanmhouse.webdev@gmail.com';
 $name           = ( isset( $_POST['name'], $_POST['portfolio_message_wp_nonce'] ) // Input var okay.
 				  && wp_verify_nonce( sanitize_key( $_POST['portfolio_message_wp_nonce'] ), 'portfolio_send_message' ) ) // Input var okay.
-				  ? filter_var( wp_unslash( $_POST['name'], FILTER_SANITIZE_STRING ) ) // Input var okay.
+				  ? filter_var( wp_unslash( $_POST['name'] ), FILTER_SANITIZE_STRING ) // Input var okay.
 				  : '';
 $sender_email   = ( isset( $_POST['email'] ) // Input var okay.
-				  ? filter_var( wp_unslash( $_POST['email'], FILTER_SANITIZE_EMAIL ) ) // Input var okay.
+				  ? filter_var( wp_unslash( $_POST['email'] ), FILTER_SANITIZE_EMAIL ) // Input var okay.
 				  : '';
 $message        = ( isset( $_POST['message'] ) // Input var okay.
-				  ? filter_var( html_entity_decode( sanitize_key( $_POST['message'] ), FILTER_SANITIZE_STRING ) ) // Input var okay.
+				  ? filter_var( html_entity_decode( sanitize_key( $_POST['message'] ) ), FILTER_SANITIZE_STRING ) // Input var okay.
 				  : '';
 
 //Create/run function to check for suspect patterns/unknown inputs
