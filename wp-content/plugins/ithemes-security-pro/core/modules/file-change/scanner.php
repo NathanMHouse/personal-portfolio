@@ -267,7 +267,8 @@ final class ITSEC_File_Change_Scanner {
 					(
 						! isset( get_current_screen()->id ) ||
 						false === strpos( get_current_screen()->id, 'security_page_toplevel_page_itsec_logs' )
-					)
+					) &&
+					! empty( $this->settings['notify_admin'] )
 				) {
 					ITSEC_Modules::set_setting( 'file-change', 'show_warning', true );
 				}

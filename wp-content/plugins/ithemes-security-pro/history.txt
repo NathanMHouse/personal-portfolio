@@ -956,3 +956,17 @@
 	Bug Fix: Fallback to correct default subject lines.
 	Bug Fix: Don't enable all administrators as the recipients for emails where all custom email addresses did not have corresponding users.
 	Upgrade Routine: Properly enable lockout and file change notifications, uncheck all administrators as recipients when necessary.
+4.6.2 - 2017-11-01 - Chris Jean & Timothy Jacobs
+	Enhancement: Updated queries and prepare statements to account for changes to the esc_sql() function in WordPress 4.8.3.
+	Bug Fix: Fixed the File Change module being incorrectly enabled when upgrading.
+4.6.3 - 2017-11-02 - Chris Jean & Timothy Jacobs
+	Bug Fix: Fixed source of the following warning: "mysql_real_escape_string() expects parameter 1 to be string, object given".
+4.6.4 - 2017-11-06 - Chris Jean & Timothy Jacobs
+	Bug Fix: Don't display file change admin notifications if the Notify Admin setting is not enabled.
+4.6.5 - 2017-11-27 - Chris Jean & Timothy Jacobs
+	Enhancement: Preserve notification settings when the responsible module is deactivated.
+	Bug Fix: Process 404 lockouts on the 'wp' hook to prevent a headers have already been sent warning message.
+	Bug Fix: Ensure Hide Backend emails are properly sent when activating Hide Backend before saving the Notification Center for the first time.
+	Bug Fix: Prevent warning from being issued on new installs by allowing previous settings to be preserved if they exist.
+	Bug Fix: Better handle WP_Error objects in mail errors that occurred before updating to first patch release.
+	Bug Fix: A non static method was being called statically.

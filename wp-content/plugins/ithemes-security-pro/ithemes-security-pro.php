@@ -6,7 +6,7 @@
  * Description: Take the guesswork out of WordPress security. iThemes Security offers 30+ ways to lock down WordPress in an easy-to-use WordPress security plugin.
  * Author: iThemes
  * Author URI: https://ithemes.com
- * Version: 4.6.1
+ * Version: 4.6.5
  * Text Domain: it-l10n-ithemes-security-pro
  * Domain Path: /lang
  * Network: True

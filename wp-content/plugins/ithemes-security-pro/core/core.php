@@ -25,7 +25,7 @@ if ( ! class_exists( 'ITSEC_Core' ) ) {
 		 *
 		 * @access private
 		 */
-		private $plugin_build = 4077;
+		private $plugin_build = 4078;
 
 		/**
 		 * Used to distinguish between a user modifying settings and the API modifying settings (such as from Sync

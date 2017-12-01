@@ -66,7 +66,7 @@ class ITSEC_Notification_Center_Setup {
 			}
 
 			if ( $file_change = ITSEC_Modules::get_settings( 'file-change' ) ) {
-				$settings['notifications']['file-change']['enabled'] = ! empty( $file_change['email'] );
+				$settings['notifications']['file-change']['enabled'] = ! empty( $file_change['email'] ) && ! $global['digest_email'];
 			}
 
 			ITSEC_Modules::set_settings( 'notification-center', $settings );
@@ -81,7 +81,7 @@ class ITSEC_Notification_Center_Setup {
 			$settings['notifications']['lockout']['enabled'] = $global['email_notifications'] && ! $global['digest_email'];
 
 			if ( $file_change = ITSEC_Modules::get_settings( 'file-change' ) ) {
-				$settings['notifications']['file-change']['enabled'] = ! empty( $file_change['email'] );
+				$settings['notifications']['file-change']['enabled'] = ! empty( $file_change['email'] ) && ! $global['digest_email'];
 			}
 
 			foreach ( $settings['notifications'] as $slug => $notification ) {
@@ -97,6 +97,21 @@ class ITSEC_Notification_Center_Setup {
 			}
 
 			ITSEC_Modules::set_settings( 'notification-center', $settings );
+		} elseif ( $itsec_old_version < 4078 ) { // Only run if user updating from 4077 -> 4078
+			ITSEC_Modules::load_module_file( 'active.php', 'notification-center' );
+
+			$settings = ITSEC_Modules::get_settings( 'notification-center' );
+
+			if ( ! isset( $settings['notifications']['file-change']['enabled'] ) || $settings['notifications']['file-change']['enabled'] ) {
+
+				$global = ITSEC_Modules::get_settings( 'global' );
+
+				if ( $file_change = ITSEC_Modules::get_settings( 'file-change' ) ) {
+					$settings['notifications']['file-change']['enabled'] = ! empty( $file_change['email'] ) && ! $global['digest_email'];
+				}
+
+				ITSEC_Modules::set_settings( 'notification-center', $settings );
+			}
 		}
 	}
 

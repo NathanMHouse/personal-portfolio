@@ -148,7 +148,7 @@ class ITSEC_Backup {
 		if ( $this->settings['all_sites'] ) {
 			$tables = $wpdb->get_col( 'SHOW TABLES' );
 		} else {
-			$tables = $wpdb->get_col( 'SHOW TABLES LIKE "' . $wpdb->base_prefix . '%"' );
+			$tables = $wpdb->get_col( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->base_prefix . '%' ) );
 		}
 
 		$max_rows_per_query = 1000;
@@ -171,7 +171,7 @@ class ITSEC_Backup {
 			$has_more_rows = true;
 
 			while ( $has_more_rows ) {
-				$rows = $wpdb->get_results( "SELECT * FROM `$table` LIMIT $offset, $max_rows_per_query;", ARRAY_N );
+				$rows = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM `$table` LIMIT %d, %d", $offset, $max_rows_per_query ), ARRAY_N );
 
 				foreach ( $rows as $row ) {
 					$sql = "INSERT INTO `$table` VALUES (";

@@ -181,7 +181,7 @@ class ITSEC_File_Change {
 	 */
 	public function register_notification( $notifications ) {
 		$notifications['file-change'] = array(
-			'recipient'        => ITSEC_Notification_Center::R_USER_LIST,
+			'recipient'        => ITSEC_Notification_Center::R_USER_LIST_ADMIN_UPGRADE,
 			'schedule'         => ITSEC_Notification_Center::S_NONE,
 			'subject_editable' => true,
 			'optional'         => true,
