@@ -6,8 +6,8 @@
  */
 
 // Vars
-$banner_404_title		= get_field( 'banner_404_title', 'options' );
-$banner_404_subtitle	= get_field( 'banner_404_subtitle', 'options' );
+$banner_404_title    = get_field( 'banner_404_title', 'options' );
+$banner_404_subtitle = get_field( 'banner_404_subtitle', 'options' );
 ?>
 
 <div class="banner-section">
@@ -15,18 +15,20 @@ $banner_404_subtitle	= get_field( 'banner_404_subtitle', 'options' );
 		<div class="banner-content row">
 
 			<?php
+
 			// The banner symbol
-			?>	
-			<div class="banner-content-icon col-md-2 col-md-offset-2">
+			?>
+			<div class="banner-content-icon col-md-2 col-md-offset-3">
 				<i class="fa fa-7x fa-mobile-5x fa-exclamation-circle"></i>
 			</div><!-- .banner-content-icon -->
 
 			<?php
+
 			// The banner title/subtitle
 			?>
-			<div class="banner-content-text col-md-6">
-				<h1><?php echo $banner_404_title; ?></h1>
-				<h2><?php echo $banner_404_subtitle; ?></h2>
+			<div class="banner-content-text col-md-4">
+				<h1><?php echo esc_html( $banner_404_title ); ?></h1>
+				<h2><?php echo esc_html( $banner_404_subtitle ); ?></h2>
 			</div><!-- .banner-content-text -->
 		</div><!-- .banner-content -->
 	</div><!-- .container -->

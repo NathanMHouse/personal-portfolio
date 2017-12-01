@@ -8,14 +8,13 @@
 
 ?>
 
-<section 
-	class="content-row 
-	<?php 
-	echo esc_attr( "$content_row_class $content_row_count_class $padding $margin" );
-	?>"
-	style="background-color: <?php echo esc_attr( $background_color ); ?>">
+<section class="content-row 
+<?php
+echo esc_attr( "$content_row_class $content_row_count_class $margin $padding" . " background-$row_color" );
+?>
+">
 
-	<div class="container">
+	<div class="container">		
 
 		<?php
 
@@ -23,9 +22,18 @@
 		if ( $title ) {
 		?>
 			<div class="row">
-				<div class="content-row-title col-md-6 col-md-offset-3">
+				<div class="content-row-title col-lg-6 col-md-8 col-md-offset-2 col-lg-offset-3">
 
-					<h2><?php echo esc_html( $title ); ?></h2>
+					<h3>
+						<?php
+						echo wp_kses(
+							$title,
+							array(
+								'br' => array(),
+							)
+						);
+						?>
+					</h3>
 
 				</div><!-- .content-row-title -->
 			</div><!-- .row -->
@@ -47,7 +55,7 @@
 		<?php
 		}
 		?>
-
+				
 	</div><!-- .container -->
 
 </section><!-- .content-row -->
