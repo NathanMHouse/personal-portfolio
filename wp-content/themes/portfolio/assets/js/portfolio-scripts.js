@@ -10,10 +10,11 @@
 
 1 Smooth Scrolling Init
 2 Footer Form Focus
-3 Footer Form Focus (Modal)
+3 Modal Close
 4 Footer Form Submission
 5 Link Blur
-
+6 Slick Image Carousel (Flexible Content)
+7 Magnific Image Pop-up
 
 --------------------------------------------------------------*/
 
@@ -23,7 +24,6 @@
 jQuery( document ).ready(function($) {
 	smoothScroll.init();
 });
-
 
 /*--------------------------------------------------------------
 2 Footer Form Focus
@@ -45,28 +45,24 @@ jQuery( document ).ready(function($) {
 	ctaLinks.on( 'click', headerFormFocus );
 });
 
-
 /*--------------------------------------------------------------
-3 Footer Form Focus (Modal)
+3 Modal Close
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
 
 	// Vars
-	var contactCta	= $( '.contact-cta' ),
-		firstInput 	= $( '#footer-contact-form :input' ).first();
+	var modalCta = $( '.case-study-cta' );
 		
 	// Callback function
-	function modalFormFocus() {
+	function modalFade( e ) {
 
-		// Close modal and give first input focus
+		// Hide modal
 		$( '.modal' ).modal( 'hide' );
-		firstInput.focus();
 	}
 
 	// Set event handler on cta click
-	contactCta.on( 'click', modalFormFocus );
+	modalCta.on( 'click', modalFade );
 });
-
 
 /*--------------------------------------------------------------
 4 Footer Form Submission
@@ -132,7 +128,6 @@ jQuery( document ).ready(function($) {
 	})
 });
 
-
 /*--------------------------------------------------------------
 5 Link Blur
 --------------------------------------------------------------*/
@@ -144,4 +139,61 @@ jQuery( document ).ready(function($) {
 		// Blur clicked link
 		$(this).blur();
 	});
+});
+
+/*--------------------------------------------------------------
+6 Slick Image Carousel (Flexible Content)
+--------------------------------------------------------------*/
+jQuery( document ).ready(function($) {
+
+	// Create variables for navigation container and html output of prev/next arrows
+	var carouselNavigationContainer = $( '.content-row-carousel-navigation' ),
+		prevArrow                   = '<span class="prev-arrow fa fa-chevron-left"></span>',
+		nextArrow                   = '<span class="next-arrow fa fa-chevron-right"></span>';
+
+	// Initialize slick w/ cusotm settings
+	$( '.content-row-carousel' ).slick({
+		appendArrows: carouselNavigationContainer,
+		autoplay: true,
+		nextArrow: nextArrow,
+		prevArrow: prevArrow,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					autoplay: true,
+					arrows: false,
+					dots: true,
+					dotsClass: 'content-row-carousel-dots',
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					autoplay: true,
+					arrows: false,
+					dots: true,
+					dotsClass: 'content-row-carousel-dots',
+					slidesToShow: 1,
+				}
+			}
+		]
+	});
+});
+
+/*--------------------------------------------------------------
+7 Magnific Image Pop-up
+--------------------------------------------------------------*/
+jQuery( document ).ready(function($) {
+
+	// Enable Magnific image pop-up on associated class
+	$('.popup-image').magnificPopup(
+		{
+			type:'image'
+		}
+	);
+
 });

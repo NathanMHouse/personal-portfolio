@@ -13,7 +13,7 @@ get_header();
 get_template_part( '/template-parts/module-banner' );
 
 // The 'About Me' section
-get_template_part( '/template-parts/content-about_me' );
+get_template_part( '/template-parts/content-about-me' );
 
 // The 'Work' section
 get_template_part( '/template-parts/content-work' );
@@ -22,7 +22,7 @@ get_template_part( '/template-parts/content-work' );
 get_template_part( '/template-parts/content-testimonial' );
 
 // The 'Thank You' section
-get_template_part( '/template-parts/content-thank_you' );
+get_template_part( '/template-parts/content-thank-you' );
 
 // The footer
 get_footer();

@@ -6,8 +6,8 @@
  */
 
 // Vars
-$content_404_title	= get_field( 'content_404_title', 'options' );
-$content_404_text	= get_field( 'content_404_text', 'options' );
+$content_404_title = get_field( 'content_404_title', 'options' );
+$content_404_text  = get_field( 'content_404_text', 'options' );
 ?>
 
 <div class="content-404-section">
@@ -16,21 +16,32 @@ $content_404_text	= get_field( 'content_404_text', 'options' );
 			<div class="content-404-text col-md-8 col-md-offset-2">
 				
 				<?php
-				// The 404 title 
+
+				// The 404 title
 				?>
-				<h3><?php echo $content_404_title; ?></h3>
+				<h3><?php echo esc_html( $content_404_title ); ?></h3>
 
 				<?php
+
 				// The 404 text
+				echo wp_kses(
+					$content_404_text,
+					array(
+						'a' => array(
+							'href'        => array(),
+							'data-scroll' => array(),
+						),
+					)
+				);
 				?>
-				<?php echo $content_404_text; ?>
 
 			</div><!-- .content-404-text -->
 			<div class="content-404-work col-md-12">
 
 				<?php
-					// The 'Work' section
-					get_template_part( '/template-parts/content-work' );
+
+				// The 'Work' section
+				get_template_part( '/template-parts/content-work' );
 				?>
 
 			</div><!-- .content-404-work -->

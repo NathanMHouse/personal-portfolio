@@ -18,21 +18,33 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
+		if ( 'post' === get_post_type() ) :
+		?>
 		<div class="entry-meta">
 			<?php portfolio_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php
-		endif; ?>
+		endif;
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'portfolio' ), array( 'span' => array( 'class' => array() ) ) ),
+		the_content(
+			sprintf(
+				wp_kses(
+
+					/* translators: %s: Name of current post. */
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'portfolio' ),
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			)
+		);
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'portfolio' ),
