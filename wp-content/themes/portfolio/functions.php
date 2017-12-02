@@ -250,7 +250,6 @@ add_action( 'admin_post_portfolio_trigger_form_handler', 'portfolio_trigger_form
 add_action( 'admin_post_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 function portfolio_trigger_form_handler() {
 
-
 	// Vars
 	$expected      = array(
 		'name',
@@ -310,13 +309,13 @@ function portfolio_trigger_form_handler() {
 		$headers       .= "\n Reply-To: $sender_email";
 
 		// Send mail
-		var_dump( mail( $to, $email_subject, $email_body, $headers ) );
+		mail( $to, $email_subject, $email_body, $headers );
 	endif;
 
 	// Build response
 	$response = $errors;
 	echo wp_json_encode( $response );
 
-	//wp_redirect( 'https://google.ca' );
-	//exit;
+	wp_redirect( 'https://google.ca' );
+	exit();
 }
