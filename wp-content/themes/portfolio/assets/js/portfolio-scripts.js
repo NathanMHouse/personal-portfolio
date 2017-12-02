@@ -70,6 +70,9 @@ jQuery( document ).ready(function($) {
 jQuery( document ).ready(function($) {
 	$( '#footer-contact-form').submit(function(e) {
 
+		//
+		return;
+
 		// Vars
 		var url 			 = 'wp-content/themes/portfolio/footer-contact-form-handler.php';
 		var	thankYouContent  = '<h3>Success!</h3>';

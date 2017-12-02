@@ -37,7 +37,11 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 						?>
 						<h3><?php echo esc_html( $footer_form_title ); ?></h3>
 						<p class="intro-text"><?php esc_html_e( '* indicates a required field.', 'portfolio' ); ?></p>
-						<form id="footer-contact-form" name="footer_contact_form" action="" method="post">
+						<form id="footer-contact-form"
+							  name="footer_contact_form"
+							  action="<?php echo admin_url( 'admin-post.php' ); ?>"
+							  method="post"
+				  		>
 
 							<?php
 
@@ -45,7 +49,10 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 							?>
 							<p class="name form-field">
 								<label for="name"><?php esc_html_e( 'Name', 'portfolio' ); ?></label>
-								<input id="name" name="name" type="text" />
+								<input id="name" 
+									   name="name" 
+									   type="text"
+							   	/>
 							</p><!-- .name -->
 
 							<?php
@@ -54,7 +61,11 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 							?>
 							<p class="email form-field required">
 								<label for="email"><?php esc_html_e( 'Email', 'portfolio' ); ?></label>
-								<input id="email" name="email" type="email" required />
+								<input id="email"
+									   name="email"
+									   type="email"
+									   required
+						   		/>
 								<span class="error inactive"><?php esc_html_e( 'Please enter a valid email address.', 'portfolio' ); ?></span>
 							</p><!-- .email -->
 
@@ -64,7 +75,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 							?>
 							<p class="message form-field">
 								<label for="message"><?php esc_html_e( 'Message', 'portfolio' ); ?></label>
-								<textarea id="message" name="message" rows="4"></textarea>
+								<textarea id="message"name="message" rows="4"></textarea>
 							</p><!-- .message -->
 
 							<?php
@@ -73,8 +84,24 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 							if ( function_exists( 'wp_nonce_field' ) ) {
 								wp_nonce_field( 'portfolio_send_message', 'portfolio_message_wp_nonce' );
 							}
+
+							// Action hook
 							?>
-								<input class="cta primary-cta" type="submit" name="submit" value="<?php echo esc_attr( $footer_form_cta_text ); ?>" />
+
+							<input type="hidden"
+								   name="action"
+								   value="portfolio_trigger_form_handler"
+					   		/>
+
+							<?php
+
+							// Submit
+							?>
+							<input class="cta primary-cta"
+								   type="submit"
+								   name="submit"
+								   value="<?php echo esc_attr( $footer_form_cta_text ); ?>"
+				   			/>
 						</form><!-- #footer-contact-form -->
 					</div><!-- .footer-contact-form-content -->
 				</div><!-- .footer-contact-form -->
