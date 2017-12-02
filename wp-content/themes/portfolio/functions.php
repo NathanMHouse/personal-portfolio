@@ -316,6 +316,7 @@ function portfolio_trigger_form_handler() {
 	$response = $errors;
 	echo wp_json_encode( $response );
 
-	wp_redirect( 'https://google.ca' );
+	//
+	wp_redirect( home_url() );
 	exit();
 }
