@@ -94,10 +94,10 @@ jQuery( document ).ready(function($) {
 			type: 'POST',
 			url: url,
 			data: $('#footer-contact-form').serialize(),
-			contentType: 'application/json; charset=utf-8',
-			dataType: 'json'
+			contentType: 'application/x-www-form-urlencoded;'
 		})
 		.done( function(response) {
+			console.log(response);
 			var response = JSON.parse(response);
 				
 			// If no errors
@@ -121,7 +121,8 @@ jQuery( document ).ready(function($) {
 				});
 			}
 		})
-		.fail( function() {
+		.fail( function(response) {
+			console.log(response);
 			$('.footer-contact-form-content').fadeOut('slow', function() {
 				$(this).html(errorContent);
 				$(this).fadeIn('slow');
