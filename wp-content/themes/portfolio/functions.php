@@ -250,6 +250,8 @@ if ( function_exists( 'acf_add_options_page' ) ) {
  */
 add_action( 'admin_post_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 add_action( 'admin_post_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
+add_action( 'wp_ajax_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
+add_action( 'wp_ajax_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 function portfolio_trigger_form_handler() {
 
 	//
@@ -263,5 +265,4 @@ function portfolio_trigger_form_handler() {
 /**
  * ?
  */
-add_action( 'wp_ajax__portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
-add_action( 'wp_ajax_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
+

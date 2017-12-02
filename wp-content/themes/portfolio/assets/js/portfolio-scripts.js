@@ -92,6 +92,8 @@ jQuery( document ).ready(function($) {
 			type: 'POST',
 			url: url,
 			data: $('#footer-contact-form').serialize(),
+			contentType: 'application/json; charset=utf-8',
+			dataType: 'json',
 
 			// Success messaging
 			success: function(response) {
