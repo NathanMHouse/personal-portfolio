@@ -3,3 +3,9 @@ wp-config.php
 
 # Ignore cache
 wp-content/cache/*
+
+# Ignore .htaccess
+.htaccess
+
+# Ignore errog log
+wp-admin/error_log
