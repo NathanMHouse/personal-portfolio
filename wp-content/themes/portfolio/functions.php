@@ -250,7 +250,10 @@ add_action( 'admin_post_portfolio_trigger_form_handler', 'portfolio_trigger_form
 add_action( 'admin_post_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 function portfolio_trigger_form_handler() {
 
-	// Vars
+	//
+	require 'footer-contact-form-handler.php';
+
+	/*// Vars
 	$expected      = array(
 		'name',
 		'email',
@@ -315,7 +318,7 @@ function portfolio_trigger_form_handler() {
 	// Build response
 	$response = $errors;
 	echo wp_json_encode( $response );
-
+*/
 	//
 	wp_redirect( home_url() );
 	exit();
