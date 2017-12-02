@@ -34,7 +34,7 @@ function portfolio_suspect_check( $value, $pattern, $expected, $errors ) {
 			if ( ! in_array( $item, $expected, true ) ) :
 				$errors['suspect'] = true;
 			else :
-				portfolio_suspect_check( $item_value, $pattern );
+				portfolio_suspect_check( $item_value, $pattern, $expected, $errors );
 			endif;
 		endforeach;
 	else :
