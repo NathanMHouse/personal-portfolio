@@ -43,7 +43,7 @@ function portfolio_suspect_check( $value, $pattern, $expected, $errors ) {
 		endif;
 	endif;
 }
-portfolio_suspect_check( $_POST, $pattern ); // Input var okay.
+portfolio_suspect_check( $_POST, $pattern, $expected, $errors ); // Input var okay.
 
 // If email field empty, create error
 if ( empty( $_POST['email'] ) || // Input var okay.
