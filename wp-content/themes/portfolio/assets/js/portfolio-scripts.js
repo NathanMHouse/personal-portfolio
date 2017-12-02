@@ -68,13 +68,12 @@ jQuery( document ).ready(function($) {
 4 Footer Form Submission
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
+
 	$( '#footer-contact-form').submit(function(e) {
 
-		//
-		return;
-
 		// Vars
-		var url 			 = 'wp-content/themes/portfolio/footer-contact-form-handler.php';
+		//var url 			 = 'wp-content/themes/portfolio/footer-contact-form-handler.php';
+		var url              = ajaxUrl;
 		var	thankYouContent  = '<h3>Success!</h3>';
 			thankYouContent += '<p>Thank you for your interest.</p>';
 			thankYouContent += '<p>I appreciate you reaching out and will be in touch shortly.</p>';
