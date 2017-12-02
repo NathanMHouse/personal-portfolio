@@ -28,9 +28,7 @@ $message        = ( isset( $_POST['message'] ) ) // Input var okay.
 				  : '';
 
 //Create/run function to check for suspect patterns/unknown inputs
-function portfolio_suspect_check( $value, $pattern ) {
-	global $expected;
-	global $errors;
+function portfolio_suspect_check( $value, $pattern, $expected, $errors ) {
 	if ( is_array( $value ) ) :
 		foreach ( $value as $item => $item_value ) :
 			if ( ! in_array( $item, $expected, true ) ) :
