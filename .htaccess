@@ -414,3 +414,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
+AuthType Basic
+AuthName "Home"
+AuthUserFile "/home1/nmhouse/.htpasswds/public_html/passwd"
+require valid-user
