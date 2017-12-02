@@ -71,6 +71,9 @@ jQuery( document ).ready(function($) {
 
 	$( '#footer-contact-form').submit(function(e) {
 
+		// Prevent default submission
+		e.preventDefault();
+
 		// Vars
 		//var url 			 = 'wp-content/themes/portfolio/footer-contact-form-handler.php';
 		var url              = ajaxUrl;
@@ -124,9 +127,6 @@ jQuery( document ).ready(function($) {
 				});
 			}
 		});
-
-		// Prevent default submission
-		e.preventDefault();
 	})
 });
 
