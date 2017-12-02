@@ -69,7 +69,11 @@ jQuery( document ).ready(function($) {
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
 
+	console.log( 'the page is loaded' );
+
 	$( '#footer-contact-form').submit(function(e) {
+
+		console.log( 'form submitted' );
 
 		// Prevent default submission
 		e.preventDefault();
