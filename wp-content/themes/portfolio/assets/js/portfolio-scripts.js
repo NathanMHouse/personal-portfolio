@@ -69,8 +69,6 @@ jQuery( document ).ready(function($) {
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
 
-	console.log( 'the page is loaded' );
-
 	$( '#footer-contact-form').submit(function(e) {
 
 		console.log( 'form submitted' );
@@ -97,9 +95,40 @@ jQuery( document ).ready(function($) {
 			url: url,
 			data: $('#footer-contact-form').serialize(),
 			contentType: 'application/json; charset=utf-8',
-			dataType: 'json',
+			dataType: 'json'
+		})
+		.done( function(response) {
+			var response = JSON.parse(response);
+				
+			// If no errors
+			if (response.length <= 0) {
+				$('.footer-contact-form-content').fadeOut('slow', function() {
+					$(this).html(thankYouContent);
+					$(this).fadeIn('slow');
+				});
 
-			// Success messaging
+			// If an email error
+			} else if (response.email == true) {
+				$('.email > .error').removeClass('inactive');
+				$('.email > .error').addClass('active');
+				$('#email').addClass('errors');
+
+			// If a suspect error
+			} else if (response.suspect == true) {
+				$('.footer-contact-form-content').fadeOut('slow', function() {
+					$(this).html(suspectContent);
+					$(this).fadeIn('slow');
+				});
+			}
+		})
+		.fail( function() {
+			$('.footer-contact-form-content').fadeOut('slow', function() {
+				$(this).html(errorContent);
+				$(this).fadeIn('slow');
+			});
+		});
+
+			/*// Success messaging
 			success: function(response) {
 				var response = JSON.parse(response);
 				
@@ -132,7 +161,7 @@ jQuery( document ).ready(function($) {
 					$(this).fadeIn('slow');
 				});
 			}
-		});
+		});*/
 	})
 });
 
