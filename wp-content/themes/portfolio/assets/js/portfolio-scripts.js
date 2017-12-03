@@ -71,14 +71,11 @@ jQuery( document ).ready(function($) {
 
 	$( '#footer-contact-form').submit(function(e) {
 
-		console.log( 'form submitted' );
-
 		// Prevent default submission
 		e.preventDefault();
 
 		// Vars
-		//var url 			 = 'wp-content/themes/portfolio/footer-contact-form-handler.php';
-		var url              = ajaxUrl;
+		var url              = ajaxUrl; // WordPress ajax url passed in via localize script
 		var	thankYouContent  = '<h3>Success!</h3>';
 			thankYouContent += '<p>Thank you for your interest.</p>';
 			thankYouContent += '<p>I appreciate you reaching out and will be in touch shortly.</p>';
@@ -97,8 +94,9 @@ jQuery( document ).ready(function($) {
 			contentType: 'application/x-www-form-urlencoded;'
 		})
 		.done( function(response) {
-			console.log(response);
 			var response = JSON.parse(response);
+
+			console.log(response);
 				
 			// If no errors
 			if (response.length <= 0) {
@@ -128,42 +126,7 @@ jQuery( document ).ready(function($) {
 				$(this).fadeIn('slow');
 			});
 		});
-
-			/*// Success messaging
-			success: function(response) {
-				var response = JSON.parse(response);
-				
-				// If no errors
-				if (response.length <= 0) {
-					$('.footer-contact-form-content').fadeOut('slow', function() {
-						$(this).html(thankYouContent);
-						$(this).fadeIn('slow');
-					});
-
-				// If an email error
-				} else if (response.email == true) {
-					$('.email > .error').removeClass('inactive');
-					$('.email > .error').addClass('active');
-					$('#email').addClass('errors');
-
-				// If a suspect error
-				} else if (response.suspect == true) {
-					$('.footer-contact-form-content').fadeOut('slow', function() {
-						$(this).html(suspectContent);
-						$(this).fadeIn('slow');
-					});
-				}
-			},
-
-			// Error messaging
-			error: function() {
-				$('.footer-contact-form-content').fadeOut('slow', function() {
-					$(this).html(errorContent);
-					$(this).fadeIn('slow');
-				});
-			}
-		});*/
-	})
+	});
 });
 
 /*--------------------------------------------------------------

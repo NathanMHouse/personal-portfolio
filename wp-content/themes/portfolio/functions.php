@@ -246,7 +246,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 /**
- * ?
+ * Link Form Submission to Form Handler
  */
 add_action( 'admin_post_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 add_action( 'admin_post_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
@@ -254,15 +254,10 @@ add_action( 'wp_ajax_portfolio_trigger_form_handler', 'portfolio_trigger_form_ha
 add_action( 'wp_ajax_nopriv_portfolio_trigger_form_handler', 'portfolio_trigger_form_handler' );
 function portfolio_trigger_form_handler() {
 
-	//
+	// Require form handler
 	require 'footer-contact-form-handler.php';
 
-	// 
+	// Redirect to home page
 	wp_redirect( home_url() );
 	exit();
 }
-
-/**
- * ?
- */
-

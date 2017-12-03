@@ -64,7 +64,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 								<input id="email"
 									   name="email"
 									   type="email"
-									   required
+									   
 						   		/>
 								<span class="error inactive"><?php esc_html_e( 'Please enter a valid email address.', 'portfolio' ); ?></span>
 							</p><!-- .email -->

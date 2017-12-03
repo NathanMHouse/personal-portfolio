@@ -10,6 +10,9 @@ $expected      = array(
 	'name',
 	'email',
 	'message',
+	'portfolio_message_wp_nonce',
+	'_wp_http_referer',
+	'action',
 );
 
 $temp           = array();
@@ -28,13 +31,14 @@ $message        = ( isset( $_POST['message'] ) ) // Input var okay.
 				  : '';
 
 //Create/run function to check for suspect patterns/unknown inputs
-function portfolio_suspect_check( $value, $pattern, $expected, $errors ) {
+function portfolio_suspect_check( $value, $pattern, &$errors, $expected ) {
+
 	if ( is_array( $value ) ) :
 		foreach ( $value as $item => $item_value ) :
 			if ( ! in_array( $item, $expected, true ) ) :
 				$errors['suspect'] = true;
 			else :
-				portfolio_suspect_check( $item_value, $pattern, $expected, $errors );
+				portfolio_suspect_check( $item_value, $pattern, $errors, $expected );
 			endif;
 		endforeach;
 	else :
@@ -43,7 +47,7 @@ function portfolio_suspect_check( $value, $pattern, $expected, $errors ) {
 		endif;
 	endif;
 }
-portfolio_suspect_check( $_POST, $pattern, $expected, $errors ); // Input var okay.
+portfolio_suspect_check( $_POST, $pattern, $errors, $expected ); // Input var okay.
 
 // If email field empty, create error
 if ( empty( $_POST['email'] ) || // Input var okay.
