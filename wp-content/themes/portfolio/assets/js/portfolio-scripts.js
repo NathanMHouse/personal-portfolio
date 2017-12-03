@@ -96,8 +96,6 @@ jQuery( document ).ready(function($) {
 		.done( function(response) {
 			var response = JSON.parse(response);
 
-			console.log(response);
-				
 			// If no errors
 			if (response.length <= 0) {
 				$('.footer-contact-form-content').fadeOut('slow', function() {

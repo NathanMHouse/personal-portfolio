@@ -27,7 +27,7 @@ $sender_email   = ( isset( $_POST['email'] ) ) // Input var okay.
 				  ? filter_var( wp_unslash( $_POST['email'] ), FILTER_SANITIZE_EMAIL ) // Input var okay.
 				  : '';
 $message        = ( isset( $_POST['message'] ) ) // Input var okay.
-				  ? filter_var( html_entity_decode( sanitize_key( $_POST['message'] ) ), FILTER_SANITIZE_STRING ) // Input var okay.
+				  ? filter_var( sanitize_key( $_POST['message'] ), FILTER_SANITIZE_STRING ) // Input var okay.
 				  : '';
 
 //Create/run function to check for suspect patterns/unknown inputs
