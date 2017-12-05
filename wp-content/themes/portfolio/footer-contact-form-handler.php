@@ -69,6 +69,18 @@ if ( ! $errors ) :
 	mail( $to, $email_subject, $email_body, $headers );
 endif;
 
-// Build response
-$response = $errors;
-echo wp_json_encode( $response );
+// Check if our submission is via JS
+$current_filter = current_filter();
+
+if ( 'admin_post_portfolio_trigger_form_handler' === $current_filter
+   || 'admin_post_nopriv_portfolio_trigger_form_handler' === $current_filter ) :
+
+	// If not, redirect to home page
+	wp_redirect( 'https://google.com' );
+	exit();
+else :
+
+	// Else, build and send response
+	$response = $errors;
+	echo wp_json_encode( $response );
+endif;

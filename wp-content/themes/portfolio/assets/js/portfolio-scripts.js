@@ -118,7 +118,6 @@ jQuery( document ).ready(function($) {
 			}
 		})
 		.fail( function(response) {
-			console.log(response);
 			$('.footer-contact-form-content').fadeOut('slow', function() {
 				$(this).html(errorContent);
 				$(this).fadeIn('slow');

@@ -256,8 +256,5 @@ function portfolio_trigger_form_handler() {
 
 	// Require form handler
 	require 'footer-contact-form-handler.php';
-
-	// Redirect to home page
-	wp_redirect( home_url() );
-	exit();
+	
 }

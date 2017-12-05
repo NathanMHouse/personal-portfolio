@@ -10,7 +10,6 @@
 $nav_cta_text = get_field( 'nav_cta_text', 'options' );
 $nav_cta_url  = get_field( 'nav_cta_url', 'options' );
 ?>
-
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
