@@ -71,6 +71,8 @@ jQuery( document ).ready(function($) {
 
 	$( '#footer-contact-form').submit(function(e) {
 
+		return;
+
 		// Prevent default submission
 		e.preventDefault();
 
