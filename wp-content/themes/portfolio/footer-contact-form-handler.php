@@ -13,6 +13,7 @@ $expected      = array(
 	'portfolio_message_wp_nonce',
 	'_wp_http_referer',
 	'action',
+	'submit',
 );
 
 $temp           = array();
@@ -75,9 +76,30 @@ $current_filter = current_filter();
 if ( 'admin_post_portfolio_trigger_form_handler' === $current_filter
    || 'admin_post_nopriv_portfolio_trigger_form_handler' === $current_filter ) :
 
-	// If not, redirect to home page
-	wp_redirect( 'https://google.com' );
-	exit();
+	// And if it contains any errors
+	if ( ! $errors ) :
+
+		// If not, redirect to home page
+		wp_safe_redirect( home_url() );
+		exit();
+
+	else :
+
+		$suspect_content  = '<h3>Error</h3>';
+		$suspect_content .= '<p>Your message was unable to be sent.</p>';
+		wp_die(
+			wp_kses(
+				$suspect_content,
+				array(
+					'h3' => array(),
+					'p'  => array(),
+				)
+			),
+			'Form Submission Failure'
+		);
+
+	endif;
+
 else :
 
 	// Else, build and send response

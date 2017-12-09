@@ -256,5 +256,6 @@ function portfolio_trigger_form_handler() {
 
 	// Require form handler
 	require 'footer-contact-form-handler.php';
-	
+	wp_die();
+
 }
