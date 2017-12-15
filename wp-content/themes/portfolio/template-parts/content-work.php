@@ -150,7 +150,7 @@ $work_title = get_field( 'work_title', 'options' );
 									<a role="button"
 									   class="cta secondary-cta"
 									   href="<?php echo esc_attr( $modal_secondary_cta_url ); ?>"
-									   target="_blank">
+								   	>
 										<?php echo esc_html( $modal_secondary_cta_text ); ?>
 									</a>
 								</div><!-- .modal-footer -->
