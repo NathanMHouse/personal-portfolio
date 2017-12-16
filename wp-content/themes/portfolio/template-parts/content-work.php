@@ -148,7 +148,7 @@ $work_title = get_field( 'work_title', 'options' );
 										<?php echo esc_html( $modal_primary_cta_text ); ?>
 									</a>
 									<a role="button"
-									   class="cta secondary-cta"
+									   class="cta secondary-cta contact-cta"
 									   href="<?php echo esc_attr( $modal_secondary_cta_url ); ?>"
 									   data-scroll
 								   	>

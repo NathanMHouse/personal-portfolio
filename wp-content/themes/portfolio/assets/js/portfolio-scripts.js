@@ -51,17 +51,31 @@ jQuery( document ).ready(function($) {
 jQuery( document ).ready(function($) {
 
 	// Vars
-	var modalCta = $( '.case-study-cta' );
-		
+	var modalCtas  = $( '.case-study-cta, .contact-cta' ),
+		firstInput = $( '#footer-contact-form :input' ).first();
+
 	// Callback function
 	function modalFade( e ) {
 
-		// Hide modal
-		$( '.modal' ).modal( 'hide' );
+		// Check which CTA we've clicked on (case study or contact)
+		if ( $.inArray( 'case-study-cta', $( e.target.classList ) ) >= 0 ) {
+			
+			// Hide modal
+			$( '.modal' ).modal( 'hide' );
+
+		} else {
+			
+			// Hide modal
+			$( '.modal' ).modal( 'hide' );
+
+			// Footer form focus
+			firstInput.focus();
+		}
+		
 	}
 
-	// Set event handler on cta click
-	modalCta.on( 'click', modalFade );
+	// Set event handler on cta clicks
+	modalCtas.on( 'click', modalFade );
 });
 
 /*--------------------------------------------------------------
