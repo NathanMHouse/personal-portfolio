@@ -264,7 +264,7 @@ class Two_Factor_Totp extends Two_Factor_Provider {
 	 */
 	public function validate_authentication( $user ) {
 		$key = get_user_meta( $user->ID, self::SECRET_META_KEY, true );
-		return $this->_is_valid_authcode( $key, $_REQUEST['authcode'] );
+		return $this->_is_valid_authcode( $key, trim( $_REQUEST['authcode'] ) );
 	}
 
 	/**

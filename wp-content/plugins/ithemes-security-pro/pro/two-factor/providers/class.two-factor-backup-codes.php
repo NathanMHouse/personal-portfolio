@@ -266,7 +266,7 @@ class Two_Factor_Backup_Codes extends Two_Factor_Provider {
 	 * @return boolean
 	 */
 	public function validate_authentication( $user ) {
-		return $this->validate_code( $user, $_POST['two-factor-backup-code'] );
+		return $this->validate_code( $user, trim( $_POST['two-factor-backup-code'] ) );
 	}
 
 	/**

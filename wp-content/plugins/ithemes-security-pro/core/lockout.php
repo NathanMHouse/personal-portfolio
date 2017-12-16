@@ -71,12 +71,8 @@ final class ITSEC_Lockout {
 		$this->core            = $core;
 		$this->lockout_modules = array(); //array to hold information on modules using this feature
 
-		//Run database cleanup daily with cron
-		if ( ! wp_next_scheduled( 'itsec_purge_lockouts' ) ) {
-			wp_schedule_event( time(), 'daily', 'itsec_purge_lockouts' );
-		}
-
-		add_action( 'itsec_purge_lockouts', array( $this, 'purge_lockouts' ) );
+		add_action( 'itsec_scheduler_register_events', array( $this, 'register_events' ) );
+		add_action( 'itsec_scheduled_purge-lockouts', array( $this, 'purge_lockouts' ) );
 
 		//Check for host lockouts
 		add_action( 'init', array( $this, 'check_current_user_for_host_lockouts' ) );
@@ -980,6 +976,15 @@ final class ITSEC_Lockout {
 		do_action( 'itsec-new-blacklisted-ip', $ip );
 
 		return true;
+	}
+
+	/**
+	 * Register the purge lockout event.
+	 *
+	 * @param ITSEC_Scheduler $scheduler
+	 */
+	public function register_events( $scheduler ) {
+		$scheduler->schedule( ITSEC_Scheduler::S_DAILY, 'purge-lockouts' );
 	}
 
 	/**

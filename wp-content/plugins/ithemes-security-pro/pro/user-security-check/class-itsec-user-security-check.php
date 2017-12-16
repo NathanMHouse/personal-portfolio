@@ -16,10 +16,6 @@ class ITSEC_User_Security_Check {
 		add_filter( 'itsec_notifications', array( $this, 'register_notifications' ) );
 		add_filter( 'itsec_two-factor-reminder_notification_strings', array( $this, 'two_factor_reminder_strings' ) );
 		add_filter( 'itsec_inactive-users_notification_strings', array( $this, 'inactive_users_strings' ) );
-
-		if ( ! wp_next_scheduled( 'itsec_check_inactive_accounts' ) ) {
-			wp_schedule_event( time(), 'daily', 'itsec_check_inactive_accounts' );
-		}
 	}
 
 	/**

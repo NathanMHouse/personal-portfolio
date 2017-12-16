@@ -1,7 +1,6 @@
 <?php
 
 class ITSEC_Version_Management_Validator extends ITSEC_Validator {
-	private $scan_for_outdated_software_hook = 'itsec_vm_outdated_wp_check';
 
 	public function get_id() {
 		return 'version-management';
@@ -21,29 +20,6 @@ class ITSEC_Version_Management_Validator extends ITSEC_Validator {
 		$this->sanitize_setting( 'bool', 'theme_automatic_updates', __( 'Theme Automatic Updates', 'it-l10n-ithemes-security-pro' ) );
 		$this->sanitize_setting( 'bool', 'strengthen_when_outdated', __( 'Strengthen Site When Running Outdated Software', 'it-l10n-ithemes-security-pro' ) );
 		$this->sanitize_setting( 'bool', 'scan_for_old_wordpress_sites', __( 'Scan For Old WordPress Sites', 'it-l10n-ithemes-security-pro' ) );
-	}
-
-	protected function validate_settings() {
-
-		if ( ! $this->can_save() ) {
-			return;
-		}
-
-		if ( $this->settings['strengthen_when_outdated'] ) {
-			if ( ! wp_next_scheduled( $this->scan_for_outdated_software_hook ) ) {
-				wp_schedule_event( time(), 'daily', $this->scan_for_outdated_software_hook );
-			}
-		} else if ( wp_next_scheduled( $this->scan_for_outdated_software_hook ) ) {
-			wp_clear_scheduled_hook( $this->scan_for_outdated_software_hook );
-		}
-
-		if ( $this->settings['scan_for_old_wordpress_sites'] ) {
-			if ( ! wp_next_scheduled( 'itsec_vm_scan_for_old_sites' ) ) {
-				wp_schedule_event( time() + ( 5 * MINUTE_IN_SECONDS ), 'daily', 'itsec_vm_scan_for_old_sites' );
-			}
-		} else if ( wp_next_scheduled( 'itsec_vm_scan_for_old_sites' ) ) {
-			wp_clear_scheduled_hook( 'itsec_vm_scan_for_old_sites' );
-		}
 	}
 
 	public function get_validated_contact( $contact ) {

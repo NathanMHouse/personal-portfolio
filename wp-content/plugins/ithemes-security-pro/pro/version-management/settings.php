@@ -17,6 +17,27 @@ final class ITSEC_Version_Management_Settings extends ITSEC_Settings {
 			'old_site_details'             => array(),
 		);
 	}
+
+	protected function handle_settings_changes( $old_settings ) {
+
+		$s = ITSEC_Core::get_scheduler();
+
+		if ( $old_settings['scan_for_old_wordpress_sites'] !== $this->settings['scan_for_old_wordpress_sites'] ) {
+			if ( $this->settings['scan_for_old_wordpress_sites'] ) {
+				$s->schedule( ITSEC_Scheduler::S_DAILY, 'old-site-scan' );
+			} else {
+				$s->unschedule( 'old-site-scan' );
+			}
+		}
+
+		if ( $old_settings['strengthen_when_outdated'] !== $this->settings['strengthen_when_outdated'] ) {
+			if ( $this->settings['strengthen_when_outdated'] ) {
+				$s->schedule( ITSEC_Scheduler::S_DAILY, 'outdated-software' );
+			} else {
+				$s->unschedule( 'outdated-software' );
+			}
+		}
+	}
 }
 
 ITSEC_Modules::register_settings( new ITSEC_Version_Management_Settings() );

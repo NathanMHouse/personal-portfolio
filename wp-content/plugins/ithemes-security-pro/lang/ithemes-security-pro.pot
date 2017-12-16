@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the iThemes Security Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: iThemes Security Pro 4.6.5\n"
+"Project-Id-Version: iThemes Security Pro 4.7.1\n"
 "Report-Msgid-Bugs-To: http://ithemes.com/support/\n"
-"POT-Creation-Date: 2017-11-27 18:58:31+00:00\n"
+"POT-Creation-Date: 2017-12-11 20:35:42+00:00\n"
 "PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -13,12 +13,12 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: core/admin-pages/init.php:29 core/admin-pages/init.php:30 core/core.php:300
-#: core/core.php:357 lib/updater/settings-page.php:324
+#: core/admin-pages/init.php:29 core/admin-pages/init.php:30 core/core.php:353
+#: core/core.php:410 lib/updater/settings-page.php:324
 msgid "Settings"
 msgstr ""
 
-#: core/admin-pages/init.php:29 core/core.php:348
+#: core/admin-pages/init.php:29 core/core.php:401
 msgid "Security"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "iThemes Security Settings"
 msgstr ""
 
-#: core/admin-pages/init.php:31 core/core.php:366
+#: core/admin-pages/init.php:31 core/core.php:419
 #: core/modules/security-check/settings-page.php:9
 msgid "Security Check"
 msgstr ""
@@ -35,7 +35,7 @@ msgstr ""
 msgid "iThemes Security Logs"
 msgstr ""
 
-#: core/admin-pages/init.php:32 core/core.php:375
+#: core/admin-pages/init.php:32 core/core.php:428
 msgid "Logs"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgid ""
 "theme conflict or a server configuration issue."
 msgstr ""
 
-#: core/admin-pages/page-logs.php:120 core/lockout.php:1108
+#: core/admin-pages/page-logs.php:120 core/lockout.php:1113
 msgid "Security error!"
 msgstr ""
 
@@ -248,8 +248,8 @@ msgid "Disable"
 msgstr ""
 
 #: core/admin-pages/page-settings.php:116
-#: core/modules/backup/class-itsec-backup.php:263
-#: core/modules/backup/class-itsec-backup.php:270
+#: core/modules/backup/class-itsec-backup.php:254
+#: core/modules/backup/class-itsec-backup.php:261
 #: core/modules/malware/class-itsec-malware-log.php:109
 #: core/modules/malware/class-itsec-malware-scan-results-template.php:167
 msgid "Error"
@@ -738,6 +738,20 @@ msgstr ""
 msgid "New Notification from iThemes Security"
 msgstr ""
 
+#: core/lib/class-itsec-scheduler-cron.php:16
+msgid "Four Times per Day"
+msgstr ""
+
+#: core/lib/class-itsec-scheduler-cron.php:20
+#: core/modules/notification-center/class-notification-center.php:1047
+msgid "Weekly"
+msgstr ""
+
+#: core/lib/class-itsec-scheduler-cron.php:24
+#: core/modules/notification-center/class-notification-center.php:1048
+msgid "Monthly"
+msgstr ""
+
 #: core/lib/class-itsec-wp-list-table.php:206
 #: pro/two-factor/application-passwords-util.php:168
 msgid "No items found."
@@ -971,115 +985,115 @@ msgstr[1] ""
 msgid "An invalid sanitize type of \"%1$s\" was received for the %2$s input."
 msgstr ""
 
-#: core/lockout.php:412
+#: core/lockout.php:408
 msgid ""
 "A whitelisted host has triggered a lockout condition but was not locked out."
 msgstr ""
 
-#: core/lockout.php:450 core/modules/global/settings.php:12
+#: core/lockout.php:446 core/modules/global/settings.php:12
 msgid ""
 "Your IP address has been flagged as a threat by the iThemes Security network."
 msgstr ""
 
-#: core/lockout.php:458 core/modules/global/settings.php:11
+#: core/lockout.php:454 core/modules/global/settings.php:11
 msgid "You have been locked out due to too many invalid login attempts."
 msgstr ""
 
-#: core/lockout.php:466
+#: core/lockout.php:462
 msgid "Error."
 msgstr ""
 
-#: core/lockout.php:524
+#: core/lockout.php:520
 msgid "About Lockouts"
 msgstr ""
 
-#: core/lockout.php:526
+#: core/lockout.php:522
 msgid ""
 "Your lockout settings can be configured in <a href=\"%s\" data-module-link="
 "\"global\">Global Settings</a>."
 msgstr ""
 
-#: core/lockout.php:528
+#: core/lockout.php:524
 msgid "Your current settings are configured as follows:"
 msgstr ""
 
-#: core/lockout.php:530
+#: core/lockout.php:526
 msgid "<strong>Permanently ban:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:530 core/lockout.php:540
+#: core/lockout.php:526 core/lockout.php:536
 msgid "yes"
 msgstr ""
 
-#: core/lockout.php:530 core/lockout.php:540
+#: core/lockout.php:526 core/lockout.php:536
 msgid "no"
 msgstr ""
 
-#: core/lockout.php:532
+#: core/lockout.php:528
 msgid "<strong>Number of lockouts before permanent ban:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:534
+#: core/lockout.php:530
 msgid "<strong>How long lockouts will be remembered for ban:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:536
+#: core/lockout.php:532
 msgid "<strong>Host lockout message:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:538
+#: core/lockout.php:534
 msgid "<strong>User lockout message:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:540
+#: core/lockout.php:536
 msgid "<strong>Is this computer white-listed:</strong> %s"
 msgstr ""
 
-#: core/lockout.php:883 core/lockout.php:912
+#: core/lockout.php:879 core/lockout.php:908
 msgid "White Listed"
 msgstr ""
 
-#: core/lockout.php:1010
+#: core/lockout.php:1015
 msgid "Host or User Lockout"
 msgstr ""
 
-#: core/lockout.php:1112
+#: core/lockout.php:1117
 msgid "The selected lockouts have been cleared."
 msgstr ""
 
-#: core/lockout.php:1177
+#: core/lockout.php:1182
 msgid "Site Lockouts"
 msgstr ""
 
-#: core/lockout.php:1178
+#: core/lockout.php:1183
 msgid ""
 "Various modules send emails to notify you when a user or host is locked out "
 "of your website."
 msgstr ""
 
-#: core/lockout.php:1179 core/lockout.php:1244
+#: core/lockout.php:1184 core/lockout.php:1249
 msgid "Site Lockout Notification"
 msgstr ""
 
-#: core/lockout.php:1227
+#: core/lockout.php:1232
 msgid "Permanently"
 msgstr ""
 
-#: core/lockout.php:1248
+#: core/lockout.php:1253
 msgid "Release lockouts from the Active Lockouts section of the settings page."
 msgstr ""
 
-#: core/lockout.php:1249
+#: core/lockout.php:1254
 msgid "Visit Settings Page"
 msgstr ""
 
-#: core/lockout.php:1253
+#: core/lockout.php:1258
 msgid ""
 "Release the permanent host ban from Ban Hosts list in the Banned Users "
 "section of the settings page."
 msgstr ""
 
-#: core/lockout.php:1254
+#: core/lockout.php:1259
 msgid "Visit Banned Users Settings"
 msgstr ""
 
@@ -1520,91 +1534,91 @@ msgid ""
 "restrict the current time."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:89
+#: core/modules/backup/class-itsec-backup.php:80
 msgid ""
 "Unable to create a backup at this time since a backup is currently being "
 "created. If you wish to create an additional backup, please wait a few "
 "minutes before trying again."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:100
+#: core/modules/backup/class-itsec-backup.php:91
 msgid ""
 "Backup complete. The backup was sent to the selected email recipients and "
 "was saved locally."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:102
+#: core/modules/backup/class-itsec-backup.php:93
 msgid "Backup complete. The backup was sent to the selected email recipients."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:104
+#: core/modules/backup/class-itsec-backup.php:95
 msgid "Backup complete. The backup was saved locally."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:133
+#: core/modules/backup/class-itsec-backup.php:124
 msgid "Unable to create the backup directory due to an unknown error."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:139
+#: core/modules/backup/class-itsec-backup.php:130
 msgid ""
 "Unable to write the backup file. This may be due to a permissions or disk "
 "space issue."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:258
+#: core/modules/backup/class-itsec-backup.php:249
 msgid "Success"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:259
+#: core/modules/backup/class-itsec-backup.php:250
 msgid "saved locally"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:264
+#: core/modules/backup/class-itsec-backup.php:255
 msgid "saved locally but email to backup recipients could not be sent."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:266
+#: core/modules/backup/class-itsec-backup.php:257
 msgid "emailed to backup recipients and saved locally"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:271
+#: core/modules/backup/class-itsec-backup.php:262
 msgid "email to backup recipients could not be sent."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:273
+#: core/modules/backup/class-itsec-backup.php:264
 msgid "emailed to backup recipients"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:286
-#: core/modules/backup/class-itsec-backup.php:362
-#: core/modules/backup/class-itsec-backup.php:364
+#: core/modules/backup/class-itsec-backup.php:277
+#: core/modules/backup/class-itsec-backup.php:367
+#: core/modules/backup/class-itsec-backup.php:369
 msgid "Database Backup"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:286
+#: core/modules/backup/class-itsec-backup.php:277
 msgid "Site Database Backup for %s"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:287
+#: core/modules/backup/class-itsec-backup.php:278
 msgid "Attached is the database backup file for your site."
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:290
+#: core/modules/backup/class-itsec-backup.php:281
 msgid "Website"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:293
+#: core/modules/backup/class-itsec-backup.php:284
 #: core/modules/file-change/class-itsec-file-change-log.php:117
 #: core/modules/file-change/class-itsec-file-change-log.php:135
 #: core/modules/file-change/class-itsec-file-change-log.php:153
 msgid "Date"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:325
+#: core/modules/backup/class-itsec-backup.php:316
 msgid "Database Backup Executed"
 msgstr ""
 
-#: core/modules/backup/class-itsec-backup.php:363
+#: core/modules/backup/class-itsec-backup.php:368
 msgid ""
 "The %1$sDatabase Backup%2$s module will send a copy of any backups to the "
 "email addresses listed below."
@@ -1698,7 +1712,7 @@ msgid ""
 msgstr ""
 
 #: core/modules/backup/settings-page.php:104
-#: core/modules/backup/validator.php:22 pro/import-export/importer.php:60
+#: core/modules/backup/validator.php:22 pro/import-export/importer.php:71
 msgid "Backup Location"
 msgstr ""
 
@@ -1774,19 +1788,19 @@ msgstr ""
 msgid "Enable Scheduled Database Backups"
 msgstr ""
 
-#: core/modules/backup/settings-page.php:147
+#: core/modules/backup/settings-page.php:146
 #: core/modules/backup/validator.php:27
 msgid "Backup Interval"
 msgstr ""
 
-#: core/modules/backup/settings-page.php:150
+#: core/modules/backup/settings-page.php:149
 #: core/modules/global/settings-page.php:130
 #: core/modules/global/settings-page.php:175
 #: pro/password-expiration/settings-page.php:57
 msgid "Days"
 msgstr ""
 
-#: core/modules/backup/settings-page.php:151
+#: core/modules/backup/settings-page.php:150
 msgid "The number of days between database backups."
 msgstr ""
 
@@ -1941,8 +1955,8 @@ msgstr[1] ""
 
 #: core/modules/brute-force/class-itsec-brute-force-log.php:88
 #: core/modules/wordpress-tweaks/class-itsec-wordpress-tweaks.php:160
-#: pro/user-security-check/class-itsec-user-security-check.php:37
-#: pro/user-security-check/class-itsec-user-security-check.php:543
+#: pro/user-security-check/class-itsec-user-security-check.php:33
+#: pro/user-security-check/class-itsec-user-security-check.php:539
 msgid "Username"
 msgstr ""
 
@@ -2521,43 +2535,43 @@ msgstr ""
 msgid "Memory Used"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:83
+#: core/modules/file-change/class-itsec-file-change.php:74
 msgid "File Changes Detected"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:106
+#: core/modules/file-change/class-itsec-file-change.php:97
 msgid "File Change History"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:147
+#: core/modules/file-change/class-itsec-file-change.php:138
 msgid "Today"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:149
+#: core/modules/file-change/class-itsec-file-change.php:140
 msgid "Tomorrow"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:154
+#: core/modules/file-change/class-itsec-file-change.php:145
 msgid "Next automatic scan at: "
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:155
+#: core/modules/file-change/class-itsec-file-change.php:146
 msgid ""
 "Automatic file change scanning is triggered by a user visiting your page and "
 "may not happen exactly at the time listed."
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:201
+#: core/modules/file-change/class-itsec-file-change.php:192
 msgid "File Change"
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:202
+#: core/modules/file-change/class-itsec-file-change.php:193
 msgid ""
 "The %1$sFile Change Detection%2$s module will email a file scan report after "
 "changes have been detected."
 msgstr ""
 
-#: core/modules/file-change/class-itsec-file-change.php:203
+#: core/modules/file-change/class-itsec-file-change.php:194
 #: core/modules/file-change/scanner.php:541
 msgid "File Change Warning"
 msgstr ""
@@ -2846,30 +2860,36 @@ msgid ""
 "file. Please make sure to keep the comments in place."
 msgstr ""
 
-#: core/modules/global/active.php:23
+#: core/modules/global/active.php:27
 msgid "New! The iThemes Security dashboard just got a new look."
 msgstr ""
 
-#: core/modules/global/active.php:24
+#: core/modules/global/active.php:28
 msgid "See what's new"
 msgstr ""
 
-#: core/modules/global/active.php:48
+#: core/modules/global/active.php:52
 msgid ""
 "New! Take your site security to the next level by activating iThemes Brute "
 "Force Network Protection."
 msgstr ""
 
-#: core/modules/global/active.php:49
+#: core/modules/global/active.php:53
 msgid "Get Free API Key"
 msgstr ""
 
-#: core/modules/global/active.php:64
+#: core/modules/global/active.php:68
 msgid ""
 "The ITSEC_DISABLE_MODULES define is set. All iThemes Security protections "
 "are disabled. Please make the necessary settings changes and remove the "
 "define as quickly as possible."
 msgstr ""
+
+#: core/modules/global/active.php:84
+msgid "The %l define is deprecated. Please use %s instead."
+msgid_plural "The %l defines are deprecated. Please use %s instead."
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/modules/global/settings-page.php:9
 msgid "Global Settings"
@@ -3062,7 +3082,7 @@ msgid ""
 msgstr ""
 
 #: core/modules/global/settings-page.php:180
-#: core/modules/global/validator.php:39 pro/import-export/importer.php:48
+#: core/modules/global/validator.php:39 pro/import-export/importer.php:59
 msgid "Path to Log Files"
 msgstr ""
 
@@ -3100,7 +3120,7 @@ msgid "Allow iThemes to track plugin usage via anonymous data."
 msgstr ""
 
 #: core/modules/global/settings-page.php:207
-#: core/modules/global/validator.php:16 pro/import-export/importer.php:54
+#: core/modules/global/validator.php:16 pro/import-export/importer.php:65
 msgid "NGINX Conf File"
 msgstr ""
 
@@ -3195,7 +3215,7 @@ msgstr ""
 
 #: core/modules/hide-backend/class-itsec-hide-backend.php:359
 #: pro/import-export/active.php:48 pro/magic-links/class-magic-links.php:245
-#: pro/user-security-check/class-itsec-user-security-check.php:594
+#: pro/user-security-check/class-itsec-user-security-check.php:590
 msgid ""
 "The WordPress Site Title. Can be changed under Settings -> General -> Site "
 "Title"
@@ -3786,14 +3806,6 @@ msgstr ""
 
 #: core/modules/notification-center/class-notification-center.php:625
 msgid "Cannot get lock."
-msgstr ""
-
-#: core/modules/notification-center/class-notification-center.php:1047
-msgid "Weekly"
-msgstr ""
-
-#: core/modules/notification-center/class-notification-center.php:1048
-msgid "Monthly"
 msgstr ""
 
 #: core/modules/notification-center/settings-page.php:16
@@ -4664,7 +4676,7 @@ msgid ""
 msgstr ""
 
 #: core/modules/wordpress-tweaks/class-itsec-wordpress-tweaks.php:328
-#: pro/version-management/class-itsec-version-management.php:137
+#: pro/version-management/class-itsec-version-management.php:140
 msgid "XML-RPC services are disabled on this site."
 msgstr ""
 
@@ -5191,7 +5203,7 @@ msgid ""
 "The direction argument must be either \"add\", \"clear\", or \"remove\"."
 msgstr ""
 
-#. #-#-#-#-#  ithemes-security-pro.pot (iThemes Security Pro 4.6.5)  #-#-#-#-#
+#. #-#-#-#-#  ithemes-security-pro.pot (iThemes Security Pro 4.7.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: ithemes-security-pro.php:61
 msgid "iThemes Security Pro"
@@ -5537,7 +5549,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: lib/updater/settings-page.php:651
-#: pro/user-security-check/class-itsec-user-security-check.php:146
+#: pro/user-security-check/class-itsec-user-security-check.php:142
 msgid "%s ago"
 msgstr ""
 
@@ -5695,122 +5707,122 @@ msgid "Unable to properly read the import file. %1$s"
 msgstr ""
 
 #. translators: 1: original error message
-#: pro/import-export/importer.php:22
+#: pro/import-export/importer.php:22 pro/import-export/importer.php:34
 msgid "Unable to properly read the settings from the import file. %1$s"
 msgstr ""
 
-#: pro/import-export/importer.php:31
+#: pro/import-export/importer.php:42
 msgid ""
 "The format of the data to be imported is invalid. The data cannot be "
 "imported."
 msgstr ""
 
-#: pro/import-export/importer.php:163
+#: pro/import-export/importer.php:174
 msgid ""
 "A server issue is preventing the zip file data from being read. Please unzip "
 "the export file and try importing the contained JSON file. The specific "
 "error that prevented the zip file data from being read is as follows: %s"
 msgstr ""
 
-#: pro/import-export/importer.php:178
+#: pro/import-export/importer.php:189
 msgid ""
 "The supplied zip file contained more than one JSON file with valid iThemes "
 "Security settings. Only zip files with one JSON file of valid settings are "
 "permitted. Please ensure that a valid export file is supplied."
 msgstr ""
 
-#: pro/import-export/importer.php:191
+#: pro/import-export/importer.php:202
 msgid ""
 "The supplied zip file did not contain a JSON file with valid iThemes "
 "Security settings. Please ensure that a valid export file is supplied."
 msgstr ""
 
-#: pro/import-export/importer.php:217
+#: pro/import-export/importer.php:228
 msgid ""
 "The unzip utility built into WordPress reported the following error when "
 "trying to unzip the supplied file: %s"
 msgstr ""
 
 #. translators: 1: original error message
-#: pro/import-export/importer.php:237
+#: pro/import-export/importer.php:248
 msgid "The settings file cannot be read. %1$s"
 msgstr ""
 
-#: pro/import-export/importer.php:244
+#: pro/import-export/importer.php:255
 msgid ""
 "The settings file is invalid or corrupt. The JSON data was unable to be "
 "read. Please ensure that you are supplying a valid export file in either a "
 "zip or JSON format."
 msgstr ""
 
-#: pro/import-export/importer.php:248
+#: pro/import-export/importer.php:259
 msgid ""
 "The settings file contains invalid data. The data is expected to be in a "
 "JSON array format, but a different format was found. Please ensure that you "
 "are supplying a valid export file."
 msgstr ""
 
-#: pro/import-export/importer.php:262
+#: pro/import-export/importer.php:273
 msgid ""
 "The settings file contains invalid data. Valid exported settings are a "
 "series of options table entries. The supplied data did not match this "
 "format. Please ensure that you are supplying a valid export file."
 msgstr ""
 
-#: pro/import-export/importer.php:266
+#: pro/import-export/importer.php:277
 msgid ""
 "The settings file contains settings that are not for iThemes Security. These "
 "settings will not be imported. Please supply an export file from iThemes "
 "Security."
 msgstr ""
 
-#: pro/import-export/importer.php:288
+#: pro/import-export/importer.php:299
 msgid ""
 "The form field used to upload the file is missing. This could indicate a "
 "browser or plugin compatibility issue. Please contact support."
 msgstr ""
 
-#: pro/import-export/importer.php:296
+#: pro/import-export/importer.php:307
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini."
 msgstr ""
 
-#: pro/import-export/importer.php:297
+#: pro/import-export/importer.php:308
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form."
 msgstr ""
 
-#: pro/import-export/importer.php:298
+#: pro/import-export/importer.php:309
 msgid "The uploaded file was only partially uploaded."
 msgstr ""
 
-#: pro/import-export/importer.php:299
+#: pro/import-export/importer.php:310
 msgid "No file was uploaded."
 msgstr ""
 
-#: pro/import-export/importer.php:300
+#: pro/import-export/importer.php:311
 msgid "Missing a temporary folder."
 msgstr ""
 
-#: pro/import-export/importer.php:301
+#: pro/import-export/importer.php:312
 msgid "Failed to write file to disk."
 msgstr ""
 
-#: pro/import-export/importer.php:302
+#: pro/import-export/importer.php:313
 msgid "File upload stopped by extension."
 msgstr ""
 
-#: pro/import-export/importer.php:308
+#: pro/import-export/importer.php:319
 msgid "Unknown upload error (code \"%s\")"
 msgstr ""
 
-#: pro/import-export/importer.php:315
+#: pro/import-export/importer.php:326
 msgid ""
 "The uploaded file was unable to be read due to a PHP error. The \"tmp_name\" "
 "field for the file upload is missing. Please contact support."
 msgstr ""
 
-#: pro/import-export/importer.php:371
+#: pro/import-export/importer.php:382
 msgid ""
 "Unable to create a temporary directory. This indicates a file permissions "
 "issue where the web server user cannot create files or directories. Please "
@@ -5820,20 +5832,20 @@ msgstr ""
 
 #. translators: %1$s is the input name. %2$s is the error message. %3$s is
 #. opening link tag. %4$s is closing link tag.
-#: pro/import-export/importer.php:426
+#: pro/import-export/importer.php:437
 msgid ""
 "The directory supplied in \"%1$s\" cannot be used as a valid directory. %2$s "
 "%3$sPlease select a valid directory%4$s."
 msgstr ""
 
 #. translators: %1$s is opening link tag. %2$s is closing link tag.
-#: pro/import-export/importer.php:432
+#: pro/import-export/importer.php:443
 msgid ""
 "The directory supplied in %1$s is not writable. Please %1$sselect a directory"
 "%2$s that can be written to."
 msgstr ""
 
-#: pro/import-export/importer.php:450
+#: pro/import-export/importer.php:461
 msgid ""
 "The file path supplied in \"%1$s\" cannot be used as it already exists but "
 "is not a file. %2$sPlease supply a valid file path%3$s."
@@ -5841,25 +5853,25 @@ msgstr ""
 
 #. translators: %1$s is the input name. %2$s is the error message. %3$s is
 #. opening link tag. %4$s is closing link tag.
-#: pro/import-export/importer.php:456
+#: pro/import-export/importer.php:467
 msgid ""
 "The file path supplied in \"%1$s\" cannot be used as the parent directory "
 "cannot be created. %2$s %3$sPlease supply a valid file path%4$s."
 msgstr ""
 
-#: pro/import-export/importer.php:461
+#: pro/import-export/importer.php:472
 msgid ""
 "The file path supplied in \"%1$s\" could not be created. %2$sPlease supply a "
 "file path that can be written to%3$s."
 msgstr ""
 
-#: pro/import-export/importer.php:463
+#: pro/import-export/importer.php:474
 msgid ""
 "The file path supplied in \"%1$s\" was successfully created, but it cannot "
 "be updated. %2$sPlease supply a file path that can be written to%3$s."
 msgstr ""
 
-#: pro/import-export/importer.php:466
+#: pro/import-export/importer.php:477
 msgid ""
 "The file path supplied in \"%1$s\" is not writable. %2$sPlease supply a file "
 "path that can be written to%3$s."
@@ -5963,13 +5975,13 @@ msgstr ""
 
 #: pro/magic-links/class-magic-links.php:242
 #: pro/two-factor/class-itsec-two-factor.php:1012
-#: pro/user-security-check/class-itsec-user-security-check.php:590
+#: pro/user-security-check/class-itsec-user-security-check.php:586
 msgid "The recipient's WordPress username."
 msgstr ""
 
 #: pro/magic-links/class-magic-links.php:243
 #: pro/two-factor/class-itsec-two-factor.php:1013
-#: pro/user-security-check/class-itsec-user-security-check.php:591
+#: pro/user-security-check/class-itsec-user-security-check.php:587
 msgid "The recipient's WordPress display name."
 msgstr ""
 
@@ -6097,11 +6109,11 @@ msgstr ""
 msgid "Scheduled malware scan found an error"
 msgstr ""
 
-#: pro/malware-scheduling/class-itsec-malware-scheduling.php:164
+#: pro/malware-scheduling/class-itsec-malware-scheduling.php:115
 msgid "Malware Scan Results"
 msgstr ""
 
-#: pro/malware-scheduling/class-itsec-malware-scheduling.php:165
+#: pro/malware-scheduling/class-itsec-malware-scheduling.php:116
 msgid ""
 "The %1$sMalware Scan Scheduling%2$s module sends an email if it discovers an "
 "issue or has repeated difficulty conducting the scan."
@@ -6274,8 +6286,8 @@ msgid "%s (deleted)"
 msgstr ""
 
 #: pro/privilege/class-itsec-privilege.php:361
-#: pro/user-security-check/class-itsec-user-security-check.php:52
-#: pro/user-security-check/class-itsec-user-security-check.php:543
+#: pro/user-security-check/class-itsec-user-security-check.php:48
+#: pro/user-security-check/class-itsec-user-security-check.php:539
 msgid "Role"
 msgstr ""
 
@@ -7524,162 +7536,162 @@ msgid ""
 "may result in some very large logs."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:43
+#: pro/user-security-check/class-itsec-user-security-check.php:39
 msgid "Two-Factor"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:46
+#: pro/user-security-check/class-itsec-user-security-check.php:42
 msgid "Password"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:48
-#: pro/user-security-check/class-itsec-user-security-check.php:543
+#: pro/user-security-check/class-itsec-user-security-check.php:44
+#: pro/user-security-check/class-itsec-user-security-check.php:539
 msgid "Last Active"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:50
+#: pro/user-security-check/class-itsec-user-security-check.php:46
 msgid "Sessions"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:73
+#: pro/user-security-check/class-itsec-user-security-check.php:69
 msgid "Two Factor Enabled"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:75
+#: pro/user-security-check/class-itsec-user-security-check.php:71
 msgid "Two Factor Not Enabled"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:77
+#: pro/user-security-check/class-itsec-user-security-check.php:73
 msgid "Send E-Mail Reminder"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:99
-#: pro/user-security-check/class-itsec-user-security-check.php:101
+#: pro/user-security-check/class-itsec-user-security-check.php:95
+#: pro/user-security-check/class-itsec-user-security-check.php:97
 msgid "Change role to&hellip;"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:121
+#: pro/user-security-check/class-itsec-user-security-check.php:117
 msgid "Not currently logged in anywhere."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:123
+#: pro/user-security-check/class-itsec-user-security-check.php:119
 msgid "You are only logged in at this location."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:125
+#: pro/user-security-check/class-itsec-user-security-check.php:121
 msgid "Log Out Everywhere Else"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:125
+#: pro/user-security-check/class-itsec-user-security-check.php:121
 msgid "Log Out Everywhere"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:126
+#: pro/user-security-check/class-itsec-user-security-check.php:122
 msgid "Currently logged in at one location."
 msgid_plural "Currently logged in at %d locations."
 msgstr[0] ""
 msgstr[1] ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:148
-#: pro/user-security-check/class-itsec-user-security-check.php:195
+#: pro/user-security-check/class-itsec-user-security-check.php:144
+#: pro/user-security-check/class-itsec-user-security-check.php:191
 msgid "Unknown"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:150
+#: pro/user-security-check/class-itsec-user-security-check.php:146
 msgid "Y/m/d"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:173
+#: pro/user-security-check/class-itsec-user-security-check.php:169
 msgctxt "password strength"
 msgid "Very weak"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:177
+#: pro/user-security-check/class-itsec-user-security-check.php:173
 msgctxt "password strength"
 msgid "Weak"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:181
+#: pro/user-security-check/class-itsec-user-security-check.php:177
 msgctxt "password strength"
 msgid "Medium"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:185
+#: pro/user-security-check/class-itsec-user-security-check.php:181
 msgctxt "password strength"
 msgid "Strong"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:189
+#: pro/user-security-check/class-itsec-user-security-check.php:185
 msgctxt "password strength"
 msgid "Unknown"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:201
+#: pro/user-security-check/class-itsec-user-security-check.php:197
 msgid ""
 "<strong>Strength:</strong> <span class=\"itsec-password-strength %1$s\">"
 "%2$s</span></br><strong>Age:</strong> <span class=\"itsec-password-age\">"
 "%3$s</span>"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:223
+#: pro/user-security-check/class-itsec-user-security-check.php:219
 #: pro/user-security-check/settings-page.php:32
 msgid "Search Users"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:231
+#: pro/user-security-check/class-itsec-user-security-check.php:227
 msgid "There was a problem searching."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:251
+#: pro/user-security-check/class-itsec-user-security-check.php:247
 msgid "Successfully updated role."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:255
+#: pro/user-security-check/class-itsec-user-security-check.php:251
 msgid "There was a problem updaing the user role."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:276
+#: pro/user-security-check/class-itsec-user-security-check.php:272
 msgid "Could not log out user sessions. Please try again."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:284
+#: pro/user-security-check/class-itsec-user-security-check.php:280
 msgid "You are now logged out everywhere else."
 msgstr ""
 
 #. translators: 1: User's display name.
-#: pro/user-security-check/class-itsec-user-security-check.php:288
+#: pro/user-security-check/class-itsec-user-security-check.php:284
 msgid "%s has been logged out."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:301
+#: pro/user-security-check/class-itsec-user-security-check.php:297
 msgid "You do not have permission to send an E-Mail to that user."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:307
+#: pro/user-security-check/class-itsec-user-security-check.php:303
 msgid ""
 "There was a problem verifying your request. Please reload the page and try "
 "again."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:319
+#: pro/user-security-check/class-itsec-user-security-check.php:315
 msgid "Two Factor Reminder"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:320
+#: pro/user-security-check/class-itsec-user-security-check.php:316
 msgid "Two Factor Authentication Reminder for %s"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:335
+#: pro/user-security-check/class-itsec-user-security-check.php:331
 msgid "Setup now"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:338
+#: pro/user-security-check/class-itsec-user-security-check.php:334
 msgid ""
 "Enabling two-factor authentication greatly increases the security of your "
 "user account on this site."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:339
+#: pro/user-security-check/class-itsec-user-security-check.php:335
 msgid ""
 "With two-factor authentication enabled, after you login with your username "
 "and password, you will be asked for an authentication code before you can "
@@ -7688,63 +7700,63 @@ msgstr ""
 
 #. translators: %1$s and %2$s are opening link tags, %3$s is the closing link
 #. tag.
-#: pro/user-security-check/class-itsec-user-security-check.php:342
+#: pro/user-security-check/class-itsec-user-security-check.php:338
 msgid ""
 "%1$sLearn more about Two Factor Authentication%3$s, or %2$show to set it up"
 "%3$s."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:353
+#: pro/user-security-check/class-itsec-user-security-check.php:349
 msgid "Reminder E-Mail has been sent."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:357
+#: pro/user-security-check/class-itsec-user-security-check.php:353
 msgid "There was a problem sending the E-Mail reminder. Please try again."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:528
+#: pro/user-security-check/class-itsec-user-security-check.php:524
 msgid "Inactive User Warning"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:529
+#: pro/user-security-check/class-itsec-user-security-check.php:525
 msgid "The following users have been inactive for more than %d day"
 msgid_plural "The following users have been inactive for more than %d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:530
+#: pro/user-security-check/class-itsec-user-security-check.php:526
 msgid ""
 "Please take the time to review the users and demote or delete any where it "
 "makes sense."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:544
+#: pro/user-security-check/class-itsec-user-security-check.php:540
 msgid "Edit Users"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:586
+#: pro/user-security-check/class-itsec-user-security-check.php:582
 msgid "Two-Factor Reminder Notice"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:587
+#: pro/user-security-check/class-itsec-user-security-check.php:583
 msgid ""
 "The %1$sUser Security Check%2$s module allows you to remind users to setup "
 "two-factor authentication for their accounts."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:588
+#: pro/user-security-check/class-itsec-user-security-check.php:584
 msgid "Please Set Up Two Factor Authentication"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:592
+#: pro/user-security-check/class-itsec-user-security-check.php:588
 msgid "The requester's WordPress username."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:593
+#: pro/user-security-check/class-itsec-user-security-check.php:589
 msgid "The requester's WordPress display name."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:596
+#: pro/user-security-check/class-itsec-user-security-check.php:592
 msgid ""
 "Hi {{ $display_name }},\n"
 "\t\t\t\n"
@@ -7752,12 +7764,12 @@ msgid ""
 "up Two Factor Authentication."
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:609
-#: pro/user-security-check/class-itsec-user-security-check.php:611
+#: pro/user-security-check/class-itsec-user-security-check.php:605
+#: pro/user-security-check/class-itsec-user-security-check.php:607
 msgid "Inactive Users"
 msgstr ""
 
-#: pro/user-security-check/class-itsec-user-security-check.php:610
+#: pro/user-security-check/class-itsec-user-security-check.php:606
 msgid ""
 "The %1$sUser Security Check%2$s module sends a list of users who have not "
 "been active in the last 30 days so you can consider demoting or removing "
@@ -7808,38 +7820,38 @@ msgstr ""
 msgid "Last page"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:244
+#: pro/version-management/class-itsec-version-management.php:241
 msgid "Outdated Site Scan"
 msgstr ""
 
 #. translators: %s is a date range ( 1/1/16 - 2/1/16 )
-#: pro/version-management/class-itsec-version-management.php:246
+#: pro/version-management/class-itsec-version-management.php:243
 msgid "Outdated sites detected on %s"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:251
+#: pro/version-management/class-itsec-version-management.php:248
 msgid "File Path"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:252
+#: pro/version-management/class-itsec-version-management.php:249
 msgid "WordPress Version"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:271
+#: pro/version-management/class-itsec-version-management.php:268
 msgid "Automatic Updates Info"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:273
+#: pro/version-management/class-itsec-version-management.php:270
 msgid ""
 "The %sVersion Management%s module will send an email with details about any "
 "automatic updates that have been performed."
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:282
+#: pro/version-management/class-itsec-version-management.php:279
 msgid "Old Site Scan"
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:283
+#: pro/version-management/class-itsec-version-management.php:280
 msgid ""
 "The %1$sVersion Management%2$s module will send an email if it detects "
 "outdated WordPress sites on your hosting account. A single outdated "
@@ -7847,7 +7859,7 @@ msgid ""
 "the other sites on the same hosting account."
 msgstr ""
 
-#: pro/version-management/class-itsec-version-management.php:284
+#: pro/version-management/class-itsec-version-management.php:281
 msgid "Old sites found on hosting account"
 msgstr ""
 
@@ -7895,7 +7907,7 @@ msgid "This should be enabled unless your theme has file customizations."
 msgstr ""
 
 #: pro/version-management/settings-page.php:66
-#: pro/version-management/validator.php:22
+#: pro/version-management/validator.php:21
 msgid "Strengthen Site When Running Outdated Software"
 msgstr ""
 
@@ -7924,7 +7936,7 @@ msgid ""
 msgstr ""
 
 #: pro/version-management/settings-page.php:82
-#: pro/version-management/validator.php:23
+#: pro/version-management/validator.php:22
 msgid "Scan For Old WordPress Sites"
 msgstr ""
 
@@ -7951,17 +7963,17 @@ msgid "All Automatic Updates"
 msgstr ""
 
 #: pro/version-management/settings-page.php:109
-#: pro/version-management/validator.php:19
+#: pro/version-management/validator.php:18
 msgid "WordPress Automatic Updates"
 msgstr ""
 
 #: pro/version-management/settings-page.php:110
-#: pro/version-management/validator.php:20
+#: pro/version-management/validator.php:19
 msgid "Plugin Automatic Updates"
 msgstr ""
 
 #: pro/version-management/settings-page.php:111
-#: pro/version-management/validator.php:21
+#: pro/version-management/validator.php:20
 msgid "Theme Automatic Updates"
 msgstr ""
 
@@ -8087,82 +8099,102 @@ msgid ""
 "of MySQL can be vulnerable to security issues."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:20
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:27
+msgid "Upgrade routine completed."
+msgstr ""
+
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:40
 msgid "File change scanning is not enabled. You must enable the module first."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:27
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:42
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:47
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:62
 msgid "File scan completed. No changes were detected."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:32
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:52
 msgid ""
 "A scan is currently running. Please wait a few minutes before attempting a "
 "new file scan."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:37
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:57
 msgid ""
 "There was an error in the scan operation. Please check the site logs or "
 "contact support."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:56
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:76
 msgid "added"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:67
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:87
 msgid "removed"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:78
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:98
 msgid "modified"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:167
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:187
 msgid "There are no current lockouts"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:175
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:195
 msgid "host"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:176
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:187
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:196
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:207
 msgid "N/A"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:186
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:206
 msgid "user"
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:239
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:259
 msgid "You must supply one or more lockout ID's to release."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:244
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:264
 msgid "Skipping empty ID."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:246
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:266
 msgid "Skipping invalid ID \"%s\". Please supply a valid ID."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:248
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:268
 msgid "Unable to remove lockout \"%s\"."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:250
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:270
 msgid "Successfully removed lockout \"%d\"."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:307
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:327
 msgid "The Security logs are empty."
 msgstr ""
 
-#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:314
+#: pro/wp-cli/class-itsec-wp-cli-command-itsec.php:334
 msgid "ago"
+msgstr ""
+
+#: pro/wp-cli/import-export.php:24
+msgid "Invalid settings file. File does not exists."
+msgstr ""
+
+#: pro/wp-cli/import-export.php:37
+msgid "Import complete"
+msgstr ""
+
+#: pro/wp-cli/import-export.php:54
+msgid "Email address is required."
+msgstr ""
+
+#: pro/wp-cli/import-export.php:65
+msgid "Export complete"
 msgstr ""
 
 #: pro/wp-cli/notification-center.php:128
@@ -8194,6 +8226,22 @@ msgstr ""
 
 #: pro/wp-cli/notification-center.php:194
 msgid "Notification sent."
+msgstr ""
+
+#: pro/wp-cli/settings.php:146
+msgid "Unexpected error."
+msgstr ""
+
+#: pro/wp-cli/settings.php:162
+msgid "Setting updated."
+msgstr ""
+
+#: pro/wp-cli/settings.php:164
+msgid "Failed to update setting."
+msgstr ""
+
+#: pro/wp-cli/settings.php:214
+msgid "No module exists with the slug %s."
 msgstr ""
 
 #. Plugin URI of the plugin/theme

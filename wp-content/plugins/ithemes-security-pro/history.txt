@@ -970,3 +970,9 @@
 	Bug Fix: Prevent warning from being issued on new installs by allowing previous settings to be preserved if they exist.
 	Bug Fix: Better handle WP_Error objects in mail errors that occurred before updating to first patch release.
 	Bug Fix: A non static method was being called statically.
+4.7.0 - 2017-12-07 - Chris Jean & Timothy Jacobs
+	New Feature: Introduces a scheduling framework for handling events. Cron is now used by default, and will switch to using an alternate scheduling system if it detects an error. To disable this detection set ITSEC_DISABLE_CRON_TEST in your wp-config.php file.
+	Important: The ITSEC_FILE_CHECK_CRON and ITSEC_BACKUP_CRON constants have been deprecated. Use ITSEC_USE_CRON instead.
+	Bug Fix: Fix occasional duplicate backups and file scans.
+4.7.1 - 2017-12-11 - Chris Jean & Timothy Jacobs
+	Bug Fix: Fixed issue where scheduled events could repeat on sites that do not properly support WordPress's cron system.

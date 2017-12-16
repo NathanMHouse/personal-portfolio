@@ -3,18 +3,10 @@
 final class ITSEC_Version_Management {
 	private static $instance;
 
-	private $scan_for_outdated_software_hook = 'itsec_vm_outdated_wp_check';
-	private $old_scan_for_outdated_software_hook = 'itsec_vm_outdated_check';
-	private $scan_for_old_sites_hook = 'itsec_vm_scan_for_old_sites';
-
 	private $settings;
 
 	private function __construct() {
 		$this->settings = ITSEC_Modules::get_settings( 'version-management' );
-
-		add_action( $this->scan_for_outdated_software_hook, array( $this, 'check_for_outdated_software' ) );
-		add_action( 'upgrader_process_complete', array( $this, 'check_for_outdated_software' ), 100 );
-		add_action( $this->scan_for_old_sites_hook, array( $this, 'scan_for_old_sites' ) );
 
 		if ( $this->settings['strengthen_when_outdated'] && $this->settings['is_software_outdated'] ) {
 			if ( ! defined( 'DISALLOW_FILE_EDIT' ) ) {
@@ -43,8 +35,19 @@ final class ITSEC_Version_Management {
 			add_filter( 'auto_update_theme', '__return_true', 20 );
 		}
 
+		if ( $this->settings['scan_for_old_wordpress_sites'] ) {
+			add_action( 'itsec_scheduled_old-site-scan', array( $this, 'scan_for_old_sites' ) );
+		}
+
+		if ( $this->settings['strengthen_when_outdated'] ) {
+			add_action( 'itsec_scheduled_outdated-software', array( $this, 'check_for_outdated_software' ) );
+			add_action( 'upgrader_process_complete', array( $this, 'check_for_outdated_software' ), 100 );
+		}
+
 		add_filter( 'automatic_updates_send_debug_email', array( $this, 'maybe_enable_automatic_updates_debug_email' ) );
 		add_filter( 'automatic_updates_debug_email', array( $this, 'filter_automatic_updates_debug_email' ) );
+
+		add_action( 'itsec_scheduler_register_events', array( __CLASS__, 'register_events' ) );
 
 		add_filter( 'itsec_notifications', array( $this, 'register_notifications' ) );
 		add_filter( 'itsec_old-site-scan_notification_strings', array( $this, 'old_site_scan_strings' ) );
@@ -60,35 +63,35 @@ final class ITSEC_Version_Management {
 	}
 
 	public static function activate() {
+		self::register_events();
+
 		$self = self::get_instance();
-
-		// If the old hook remains, store the next scheduled time and clear the hook.
-		if ( false !== ( $time = wp_next_scheduled( $self->old_scan_for_outdated_software_hook ) ) ) {
-			wp_clear_scheduled_hook( $self->old_scan_for_outdated_software_hook );
-		}
-
-		if ( ! wp_next_scheduled( $self->scan_for_outdated_software_hook ) ) {
-			// Use the time from the old hook, if it is valid, otherwise, use the current time.
-			if ( ! isset( $time ) || false === $time ) {
-				$time = time();
-			}
-
-			wp_schedule_event( $time, 'daily', $self->scan_for_outdated_software_hook );
-		}
-
-		if ( $self->settings['scan_for_old_wordpress_sites'] && ! wp_next_scheduled( $self->scan_for_old_sites_hook ) ) {
-			wp_schedule_event( time() + ( 5 * MINUTE_IN_SECONDS ), 'daily', $self->scan_for_old_sites_hook );
-		}
-
 		$self->check_for_outdated_software();
 	}
 
 	public static function deactivate() {
-		$self = self::get_instance();
+		ITSEC_Core::get_scheduler()->unschedule( 'old-site-scan' );
+		ITSEC_Core::get_scheduler()->unschedule( 'outdated-software' );
+	}
 
-		wp_clear_scheduled_hook( $self->old_scan_for_outdated_software_hook );
-		wp_clear_scheduled_hook( $self->scan_for_outdated_software_hook );
-		wp_clear_scheduled_hook( $self->scan_for_old_sites_hook );
+	/**
+	 * Register the events.
+	 *
+	 * @param ITSEC_Scheduler|null $scheduler
+	 */
+	public static function register_events( $scheduler = null ) {
+		$scheduler = $scheduler ? $scheduler : ITSEC_Core::get_scheduler();
+
+		$old_site = ITSEC_Modules::get_setting( 'version-management', 'scan_for_old_wordpress_sites', false );
+		$strengthen = ITSEC_Modules::get_setting( 'version-management', 'strengthen_when_outdated', false );
+
+		if ( $old_site ) {
+			$scheduler->schedule( ITSEC_Scheduler::S_DAILY, 'old-site-scan' );
+		}
+
+		if ( $strengthen ) {
+			$scheduler->schedule( ITSEC_Scheduler::S_DAILY, 'outdated-software' );
+		}
 	}
 
 	/**
@@ -144,7 +147,6 @@ final class ITSEC_Version_Management {
 	 */
 	public function check_for_outdated_software() {
 		if ( ! $this->settings['strengthen_when_outdated'] ) {
-			wp_clear_scheduled_hook( $this->scan_for_outdated_software_hook );
 			return;
 		}
 
@@ -175,11 +177,6 @@ final class ITSEC_Version_Management {
 	 * This will not be run if old WordPress sites have already been detected.
 	 */
 	public function scan_for_old_sites() {
-		if ( ! $this->settings['scan_for_old_wordpress_sites'] ) {
-			wp_clear_scheduled_hook( 'itsec_vm_scan_for_old_sites' );
-			return;
-		}
-
 		require_once( dirname( __FILE__ ) . '/old-site-scanner.php' );
 
 		ITSEC_VM_Old_Site_Scanner::run_scan();
