@@ -13,3 +13,4 @@
 [12-Dec-2017 11:19:20 UTC] PHP Warning:  Illegal string offset 'url' in /home1/nmhouse/public_html/wp-content/themes/portfolio/template-parts/flexible-content-image-carousel.php on line 40
 [12-Dec-2017 11:19:20 UTC] PHP Warning:  Illegal string offset 'url' in /home1/nmhouse/public_html/wp-content/themes/portfolio/template-parts/flexible-content-image-carousel.php on line 41
 [12-Dec-2017 11:19:20 UTC] PHP Warning:  Illegal string offset 'alt' in /home1/nmhouse/public_html/wp-content/themes/portfolio/template-parts/flexible-content-image-carousel.php on line 42
+[17-Dec-2017 11:38:18 America/Chicago] PHP Deprecated:  Automatically populating $HTTP_RAW_POST_DATA is deprecated and will be removed in a future version. To avoid this warning set 'always_populate_raw_post_data' to '-1' in php.ini and use the php://input stream instead. in Unknown on line 0
