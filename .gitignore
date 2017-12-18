@@ -9,6 +9,7 @@ wp-content/cache/*
 
 # Ignore errog log
 wp-admin/error_log
+error_log
 
 # Ignore test file
 test.php
