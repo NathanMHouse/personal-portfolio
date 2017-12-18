@@ -11,4 +11,4 @@ wp-content/cache/*
 wp-admin/error_log
 
 # Ignore test file
-#test.php
+test.php
