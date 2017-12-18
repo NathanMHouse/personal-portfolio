@@ -724,6 +724,10 @@ a:hover {
 	.about-me-section {
 		margin-top: 60px;	
 	}
+
+	.about-me-content-skills {
+		padding-top: 40px;
+	}
 }
 
 /*--------------------------------------------------------------

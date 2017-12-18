@@ -178,7 +178,7 @@ function portfolio_scripts() {
 
 	// Enqueue custom scripts
 	$ajax_url = admin_url( 'admin-ajax.php' );
-	wp_enqueue_script( 'portfolio-scripts', get_template_directory_uri() . '/assets/js/portfolio-scripts.js', array( 'jquery' ), null, true );
+	wp_enqueue_script( 'portfolio-scripts', get_template_directory_uri() . '/assets/js/portfolio-scripts.min.js', array( 'jquery' ), null, true );
 	wp_localize_script( 'portfolio-scripts', 'ajaxUrl', $ajax_url );
 
 	wp_enqueue_script( 'portfolio-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
