@@ -13,3 +13,8 @@ error_log
 
 # Ignore test file
 test.php
+
+# Ignore contents at root except for wp-content and project README
+/*
+!wp-content/
+!README.md
