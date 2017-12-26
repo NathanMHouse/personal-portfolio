@@ -1,1 +1,0 @@
-/home1/nmhouse/public_html/wp-content/plugins/query-monitor/wp-content/db.php
