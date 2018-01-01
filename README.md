@@ -4,7 +4,7 @@ Custom WordPress theme that is perfect for portfolio/brochure style websites. Fe
 
 ## Getting Started
 
-Theme activation follows basic WordPress worfklow.
+Theme activation follows basic WordPress workflow.
 
 ### Prerequisites
 
@@ -15,7 +15,7 @@ Portfolio Theme plugin (included w/ package)
 
 ### Installing
 
-To install, simply download the theme and place in your theme directory.
+To install, simply download the theme and place in your theme directory:
 
 ```
 wp-content/themes/
@@ -23,7 +23,7 @@ wp-content/themes/
 
 The premium [Advanced Custom Fields plugin](https://www.advancedcustomfields.com/) will also need to be enabled. 
 
-Finally, import the theme's custom field settings by uploading the included JSON file
+Finally, import the theme's custom field settings by uploading the included JSON file:
 
 ```
 personal-portfolio-custom-fields.json
