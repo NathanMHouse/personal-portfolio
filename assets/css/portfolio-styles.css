@@ -369,6 +369,7 @@ a:hover {
 
 .modal-header {
   border-bottom: 2px solid #ddd;
+  line-height: 1;
   padding: 30px;
   position: relative;
 }
@@ -388,6 +389,10 @@ a:hover {
 .modal-header .close:focus,
 .modal-header .close:hover {
 	color: #7f1d1e;
+}
+
+.modal-header-image {
+	height: 40px;
 }
 
 .modal-title {
@@ -669,6 +674,9 @@ a:hover {
 		margin-top: 50px;
 		padding: 60px 0 0 0;
 	}
+	.banner-content-image {
+		height: 260px;
+	}
 }
 
 @media screen and (max-width: 420px) {
@@ -773,25 +781,25 @@ a:hover {
 .work-section-content-block:active .work-section-logo.versapay-logo,
 .work-section-content-block:focus .work-section-logo.versapay-logo,
 .work-section-content-block:hover .work-section-logo.versapay-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/versapay-logo-white.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/versapay-logo-white.svg ) no-repeat center;
 }
 
 .work-section-content-block:active .work-section-logo.leveragepoint-logo,
 .work-section-content-block:focus .work-section-logo.leveragepoint-logo,
 .work-section-content-block:hover .work-section-logo.leveragepoint-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/leveragepoint-logo-white.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/leveragepoint-logo-white.svg ) no-repeat center;
 }
 
 .work-section-content-block:active .work-section-logo.resource-centre-plugin-logo,
 .work-section-content-block:focus .work-section-logo.resource-centre-plugin-logo,
 .work-section-content-block:hover .work-section-logo.resource-centre-plugin-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-resource-centre-logo-white.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-resource-center-plugin-logo-white.svg ) no-repeat center;
 }
 
 .work-section-content-block:active .work-section-logo.brainrider-logo,
 .work-section-content-block:focus .work-section-logo.brainrider-logo,
 .work-section-content-block:hover .work-section-logo.brainrider-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-logo-white.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-logo-white.svg ) no-repeat center;
 }
 
 
@@ -805,22 +813,22 @@ a:hover {
 }
 
 .work-section-logo.versapay-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/versapay-logo-red.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/versapay-logo-red.svg ) no-repeat center;
 	height: 43px;
 }
 
 .work-section-logo.leveragepoint-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/leveragepoint-logo-red.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/leveragepoint-logo-red.svg ) no-repeat center;
 	height: 43px;
 }
 
 .work-section-logo.resource-centre-plugin-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-resource-centre-logo-red.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-resource-center-plugin-logo-red.svg ) no-repeat center;
 	height: 43px;
 }
 
 .work-section-logo.brainrider-logo {
-	background: url( http://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-logo-red.png ) no-repeat center;
+	background: url( https://nathanmhouse.com/wp-content/themes/portfolio/assets/images/brainrider-logo-red.svg ) no-repeat center;
 	height: 43px;
 }
 
