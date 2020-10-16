@@ -84,7 +84,8 @@ $work_title = get_field( 'work_title', 'options' );
 								 role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<img src="<?php echo esc_attr( $modal_logo['url'] ); ?>" 
+										<img class="modal-header-image"
+											 src="<?php echo esc_attr( $modal_logo['url'] ); ?>" 
 											 alt="<?php echo esc_attr( $modal_logo['alt'] ); ?>" />
 										<button type="button" class="close" 
 												data-dismiss="modal" 
@@ -143,7 +144,8 @@ $work_title = get_field( 'work_title', 'options' );
 								<div class="modal-footer">
 									<a role="button" 
 									   class="cta primary-cta case-study-cta" 
-									   href="<?php echo esc_attr( $modal_primary_cta_url ); ?>" 
+									   href="<?php echo esc_attr( $modal_primary_cta_url ); ?>"
+									   target="_blank"
 								   	>
 										<?php echo esc_html( $modal_primary_cta_text ); ?>
 									</a>
