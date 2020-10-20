@@ -31,7 +31,7 @@ $message        = ( isset( $_POST['message'] ) ) // Input var okay.
 				  ? filter_var( sanitize_text_field( wp_unslash( $_POST['message'] ) ), FILTER_SANITIZE_STRING ) // Input var okay.
 				  : '';
 
-//Create/run function to check for suspect patterns/unknown inputs
+// Create/run function to check for suspect patterns/unknown inputs
 function portfolio_suspect_check( $value, $pattern, &$errors, $expected ) {
 
 	if ( is_array( $value ) ) :
