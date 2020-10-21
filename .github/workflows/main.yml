@@ -21,6 +21,6 @@ jobs:
             -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
             --exclude /deploy_key \
             --exclude /.git/ \
-            --eclude /.github/ \
+            --exclude /.github/ \
             --exclude /node_modules/ \
             ./ ${{env.dest}}
