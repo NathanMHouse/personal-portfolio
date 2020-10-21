@@ -13,7 +13,7 @@ jobs:
 
       - name: Sync
         env:
-          dest: 'nmhouse@108.167.181.239:/public_html/test'
+          dest: 'nmhouse@nathanmhouse.com:/public_html/test'
         run: |
           echo "${{secrets.DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
