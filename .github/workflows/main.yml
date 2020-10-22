@@ -25,4 +25,5 @@ jobs:
             --exclude /node_modules/ \
             --exclude /personal-portfolio-custom-fields.json \
             --exclude /README.md \
+            --exclude /test.txt \
             ./ ${{env.dest}}
