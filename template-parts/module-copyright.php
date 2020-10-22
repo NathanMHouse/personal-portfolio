@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				&copy; Nathan M. House <?php echo esc_html( date( 'Y' ) ); ?>
+				&copy; Nathan House <?php echo esc_html( date( 'Y' ) ); ?>
 			</div><!-- .col -->
 		</div><!-- .row -->
 	</div><!-- .container -->
