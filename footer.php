@@ -80,6 +80,15 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 
 							<?php
 
+							// 
+							?>
+							<p class="honey-pot form-field">
+								<label for=""><?php esc_html_e( 'Do not fill', 'portfolio' ); ?></label>
+								<input type="checkbox" name="honey_pot" value="1" tabindex="-1" autocomplete="off">
+							</p><!-- .honey-pot -->
+
+							<?php
+
 							// Nonce verification
 							if ( function_exists( 'wp_nonce_field' ) ) {
 								wp_nonce_field( 'portfolio_send_message', 'portfolio_message_wp_nonce' );
