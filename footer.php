@@ -80,7 +80,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 
 							<?php
 
-							// 
+							// Honey Pot
 							?>
 							<p class="honey-pot form-field">
 								<label for=""><?php esc_html_e( 'Do not fill', 'portfolio' ); ?></label>

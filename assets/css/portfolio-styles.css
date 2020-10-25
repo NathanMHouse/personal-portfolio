@@ -1866,6 +1866,11 @@ footer .footer-contact-form {
 	margin: 10px 0 0;
 }
 
+#footer-contact-form .honey-pot {
+	margin-left: -9999999px;
+	position: absolute;
+}
+
 @media screen and (min-width: 992px) {
 	footer .row {
 		display: flex;
