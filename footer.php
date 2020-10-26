@@ -146,7 +146,6 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 					?>
 					<div class="footer-colophon-social">
 						<a href="mailto:<?php echo esc_attr( $social_email_link ); ?>"><i class="fa fa-lg fa-envelope-o"></i></a>
-						<a href="<?php echo esc_attr( $social_twitter_link ); ?>" target="_blank"><i class="fa fa-lg fa-twitter"></i></a>
 						<a href="<?php echo esc_attr( $social_github_link ); ?>" target="_blank"><i class="fa fa-lg fa-github"></i></a>
 						<a href="<?php echo esc_attr( $social_linkedin_link ); ?>" target="_blank"><i class="fa fa-lg fa-linkedin"></i></a>
 					</div><!-- .footer-social -->
