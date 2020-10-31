@@ -99,4 +99,4 @@ $nav_cta_url  = get_field( 'nav_cta_url', 'options' );
 				</div><!-- .container -->
 			</header><!-- #masthead -->
 			<div id="content" 
-				 class="site-content">
+				 class="site-content <?php echo ( is_front_page() ) ? esc_attr( 'site-content--front-page' ) : ''; ?>">
