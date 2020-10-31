@@ -102,6 +102,11 @@ a:hover {
 	cursor: zoom-in;
 }
 
+.is-scrolled {
+	box-shadow: 0 2px 6px rgba(51,51,51,0.5);
+	transition: all .35s ease-in-out;
+}
+
 @media screen and (max-width: 991px) {
 	h1,
 	h2,
