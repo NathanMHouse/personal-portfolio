@@ -13,7 +13,7 @@
 	// The title module
 	get_template_part( 'template-parts/module', 'title' );
 	?>
-	<div class="entry-content">
+	<div class="container entry-content">
 		<?php
 		the_content(
 			sprintf(
