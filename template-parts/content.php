@@ -6,10 +6,13 @@
  *
  * @package Portfolio
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php 
+	// The title module
+	get_template_part( 'template-parts/module', 'title' );
+	?>
 	<div class="entry-content">
 		<?php
 		the_content(
