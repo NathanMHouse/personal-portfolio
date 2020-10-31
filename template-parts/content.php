@@ -13,23 +13,16 @@
 	// The title module
 	get_template_part( 'template-parts/module', 'title' );
 	?>
-	<div class="container entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-
-					/* translators: %s: Name of current post. */
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'portfolio' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+	<div class="container">
+		<div class="row">
+			<aside class="col-md-4">
+				<div class="table-of-contents"></div>
+			</aside>
+			<div class="col-md-8">
+				<?php
+				the_content();
+				?>
+			</div><!-- .entry-content -->
+		</div><!-- .rwo -->
+	</div><!-- .container -->
 </article><!-- #post-## -->
