@@ -32,8 +32,4 @@
 		);
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php portfolio_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
