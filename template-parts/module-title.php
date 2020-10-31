@@ -13,7 +13,7 @@
 			<?php
 			// The title
 			?>
-			<div class="title-content-text col-md-6 col-md-offset-3">
+			<div class="title-content-text col-md-8 col-md-offset-2">
 				<h1><?php the_title(); ?></h1>
 			</div><!-- .title-content-text -->
 
