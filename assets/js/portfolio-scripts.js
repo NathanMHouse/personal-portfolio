@@ -15,6 +15,7 @@
 5 Link Blur
 6 Slick Image Carousel (Flexible Content)
 7 Magnific Image Pop-up
+8 Header Scroll Tracking
 
 --------------------------------------------------------------*/
 
@@ -208,4 +209,18 @@ jQuery( document ).ready(function($) {
 		}
 	);
 
+});
+
+/*--------------------------------------------------------------
+8 Header Scroll Tracking
+--------------------------------------------------------------*/
+jQuery( document ).ready(function($) {
+	const siteHeader = document.querySelector('.site-header');
+	$(document).on('scroll', function() {
+		if (window.scrollY > 0) {
+			$(siteHeader).addClass('is-scrolled');
+		} else {
+			$(siteHeader).removeClass('is-scrolled');
+		}
+	});
 });
