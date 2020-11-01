@@ -16,7 +16,31 @@
 	<div class="container">
 		<div class="row">
 			<aside class="col-md-4">
-				<div class="table-of-contents"></div>
+				<div class="table-of-contents">
+					<h2>Table of Contents</h2>
+					<?php
+					if ( have_rows( 'section' ) ) {
+						?>
+						<ol>
+						<?php
+						while ( have_rows( 'section' ) ) {
+							the_row();
+							
+							$title = get_sub_field( 'title' );
+
+							if ( empty( $title ) ) {
+								continue;
+							}
+							?>
+							<li><a href="#"><?php echo esc_html( $title ); ?></a></li>
+							<?php
+						}
+						?>
+						</ol>
+						<?php
+					}
+					?>
+				</div>
 			</aside>
 			<div class="col-md-8">
 				<?php
