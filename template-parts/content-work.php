@@ -9,7 +9,7 @@
 $work_title = get_field( 'work_title', 'options' );
 ?>
 
-<div id="work" class="work-section">
+<section id="work" class="work-section">
 	<?php if ( ! is_404() ) : ?>
 		<div  class="container">
 	<?php endif; ?>
@@ -173,4 +173,4 @@ $work_title = get_field( 'work_title', 'options' );
 	<?php if ( ! is_404() ) : ?>
 		</div><!-- .container -->
 	<?php endif; ?>
-</div><!-- #work -->
+</section><!-- #work -->

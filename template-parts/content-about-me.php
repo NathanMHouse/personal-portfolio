@@ -11,7 +11,7 @@ $about_me_text  = get_field( 'about_me_text', 'options' );
 $skills_title   = get_field( 'skills_title', 'options' );
 ?>
 
-<div id="about-me" class="about-me-section">
+<section id="about-me" class="about-me-section">
 	<div class="container">
 		<div class="row">
 
@@ -64,4 +64,4 @@ $skills_title   = get_field( 'skills_title', 'options' );
 			</div><!-- .about-me-content-skills -->
 		</div><!-- .row -->
 	</div><!-- .container -->
-</div><!-- #about-me -->
+</section><!-- #about-me -->

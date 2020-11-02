@@ -6,7 +6,7 @@
  */
 ?>
 
-<div id="testimonials" class="testimonial-section">
+<section id="testimonials" class="testimonial-section">
 	<div class="container">
 		<div class="row">
 
@@ -71,4 +71,4 @@
 			?>
 		</div><!-- .row -->
 	</div><!-- .container -->
-</div><!-- #testimonials -->
+</section><!-- #testimonials -->

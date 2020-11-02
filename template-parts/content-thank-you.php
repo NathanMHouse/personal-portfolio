@@ -10,7 +10,7 @@ $thank_you_title = get_field( 'thank_you_title', 'options' );
 $thank_you_text  = get_field( 'thank_you_text', 'options' );
 ?>
 
-<div class="thank-you-section">
+<section class="thank-you-section">
 	<div class="container">
 		<div class="row">
 
@@ -38,4 +38,4 @@ $thank_you_text  = get_field( 'thank_you_text', 'options' );
 
 		</div><!-- .row -->
 	</div><!-- .container -->
-</div><!-- .thank-you-section -->
+</section><!-- .thank-you-section -->
