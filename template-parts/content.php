@@ -17,7 +17,7 @@
 		<div class="row">
 			<aside class="col-md-4">
 				<div class="table-of-contents">
-					<h2>Table of Contents</h2>
+					<h2><?php _e( 'Table of Contents', 'portfolio' ); ?></h2>
 					<?php
 					if ( have_rows( 'section' ) ) {
 						?>
@@ -26,13 +26,14 @@
 						while ( have_rows( 'section' ) ) {
 							the_row();
 							
-							$title = get_sub_field( 'title' );
+							$title  = get_sub_field( 'title' );
+							$anchor = strtolower( str_replace( ' ', '-', "#$title" ) );
 
 							if ( empty( $title ) ) {
 								continue;
 							}
 							?>
-							<li><a href="#"><?php echo esc_html( $title ); ?></a></li>
+							<li><a href="<?php echo esc_attr( $anchor ); ?>"><?php echo esc_html( $title ); ?></a></li>
 							<?php
 						}
 						?>
@@ -44,7 +45,31 @@
 			</aside>
 			<div class="col-md-8">
 				<?php
-				the_content();
+				if ( have_rows( 'section' ) ) {
+					while ( have_rows( 'section' ) ) {
+						the_row();
+						
+						$title   = get_sub_field( 'title' );
+						$id      = strtolower( str_replace( ' ', '-', $title ) );
+						$content = get_sub_field( 'content' );
+
+						if ( empty( $content ) ) {
+							continue;
+						}
+						?>
+						<section id="<?php echo esc_attr( $id ); ?>">
+							<?php
+							if ( $title ) {
+							?>
+								<h2><?php echo esc_html( $title ); ?></h2>
+							<?php
+							}
+							echo wp_kses_post( $content );
+							?>
+						</section>
+						<?php
+					}
+				}
 				?>
 			</div><!-- .entry-content -->
 		</div><!-- .rwo -->
