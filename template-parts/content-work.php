@@ -22,7 +22,7 @@ $work_title = get_field( 'work_title', 'options' );
 				if ( ! is_404() ) :
 				?>
 					<div class="col-md-12">
-						<h3><?php echo esc_html( $work_title ); ?></h3>
+						<h2><?php echo esc_html( $work_title ); ?></h2>
 					</div><!-- .col -->
 
 				<?php
@@ -102,7 +102,7 @@ $work_title = get_field( 'work_title', 'options' );
 											// The overview
 											?>
 											<div class="col-md-6 modal-overview">
-												<h3><?php esc_html_e( 'Overview', 'portfolio' ); ?></h3>
+												<h2><?php esc_html_e( 'Overview', 'portfolio' ); ?></h2>
 												<?php 
 												echo wp_kses_post(
 													$modal_content
@@ -117,7 +117,7 @@ $work_title = get_field( 'work_title', 'options' );
 											// The skills
 											?>
 											<div class="col-md-6 modal-skills">
-												<h3><?php esc_html_e( 'Skills', 'portfolio' ); ?></h3>
+												<h2><?php esc_html_e( 'Skills', 'portfolio' ); ?></h2>
 												<ul>
 													<?php
 													if ( have_rows( 'modal_skills_list' ) ) :

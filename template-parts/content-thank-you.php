@@ -19,7 +19,7 @@ $thank_you_text  = get_field( 'thank_you_text', 'options' );
 			// The title and thank you text
 			?>
 			<div class="thank-you-content-text col-md-8 col-md-offset-2">
-			<h3><?php echo esc_html( $thank_you_title ); ?></h3>
+			<h2><?php echo esc_html( $thank_you_title ); ?></h2>
 			<?php 
 			echo wp_kses(
 				$thank_you_text,

@@ -35,7 +35,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 
 						// The form title
 						?>
-						<h3><?php echo esc_html( $footer_form_title ); ?></h3>
+						<h2><?php echo esc_html( $footer_form_title ); ?></h2>
 						<p class="intro-text"><?php esc_html_e( '* indicates a required field.', 'portfolio' ); ?></p>
 						<form id="footer-contact-form"
 							  name="footer_contact_form"
@@ -125,7 +125,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 
 						// The footer title
 						?>
-						<h3><?php echo esc_html( $footer_title ); ?></h3>
+						<h2><?php echo esc_html( $footer_title ); ?></h2>
 
 						<?php
 

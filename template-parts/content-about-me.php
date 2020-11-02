@@ -20,7 +20,7 @@ $skills_title   = get_field( 'skills_title', 'options' );
 			// The title and intro text
 			?>
 			<div class="about-me-content-text col-md-7">
-				<h3><?php echo esc_html( $about_me_title ); ?></h3>
+				<h2><?php echo esc_html( $about_me_title ); ?></h2>
 				<?php
 				echo wp_kses_post(
 					$about_me_text
@@ -33,7 +33,7 @@ $skills_title   = get_field( 'skills_title', 'options' );
 			// The skills block
 			?>
 			<div class="about-me-content-skills col-md-4 col-md-offset-1">
-				<h3><?php echo esc_html( $skills_title ); ?></h3>
+				<h2><?php echo esc_html( $skills_title ); ?></h2>
 				<ul>
 					<?php
 					if ( have_rows( 'skills_list_items', 'options' ) ) :
