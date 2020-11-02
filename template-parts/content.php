@@ -33,7 +33,7 @@
 								continue;
 							}
 							?>
-							<li><a href="<?php echo esc_attr( $anchor ); ?>"><?php echo esc_html( $title ); ?></a></li>
+							<li><a href="<?php echo esc_attr( $anchor ); ?>" data-scroll><?php echo esc_html( $title ); ?></a></li>
 							<?php
 						}
 						?>
