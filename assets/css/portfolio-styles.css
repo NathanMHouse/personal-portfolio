@@ -30,8 +30,9 @@
 	6.7 Image Carousel
 	6.8 CTA
 	6.9 CTA Alt
-7 404
-8 Footer
+7 Posts
+8 404
+9 Footer
 
 
 --------------------------------------------------------------*/
@@ -1718,7 +1719,33 @@ a:hover {
 }
 
 /*--------------------------------------------------------------
-7 404
+7 Posts
+--------------------------------------------------------------*/
+.post p:last-of-type {
+	margin: 0 0 1.5rem;
+}
+
+.post section:last-of-type p:last-of-type {
+	margin: 0;
+}
+
+.table-of-contents ol {
+	margin: 0;
+	padding: 0 0 0 1.6rem;
+}
+
+.table-of-contents ol li {
+	line-height: 1.25;
+	margin: 0 0 8px;
+}
+
+.table-of-contents ol li a,
+.table-of-contents ol li a:visited {
+	font-weight: 300;
+}
+
+/*--------------------------------------------------------------
+8 404
 --------------------------------------------------------------*/
 #menu-404 .menu-item {
 	font-size: 24px;
@@ -1768,7 +1795,7 @@ a:hover {
 }
 
 /*--------------------------------------------------------------
-8 Footer
+9 Footer
 --------------------------------------------------------------*/
 footer {
 	background-color: #f3f3f3;
