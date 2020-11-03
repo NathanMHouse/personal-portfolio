@@ -13,7 +13,7 @@
 	// The title module
 	get_template_part( 'template-parts/module', 'title' );
 	?>
-	<div class="container">
+	<div class="content-section container">
 		<div class="row">
 			<aside class="col-md-4">
 				<div class="table-of-contents">
