@@ -163,7 +163,7 @@ function portfolio_scripts() {
 	wp_enqueue_script( 'portfolio-fastclick', get_template_directory_uri() . '/assets/js/fastclick.min.js', array(), null, true );
 
 	// Enqueue scroll script
-	wp_enqueue_script( 'portfolio-scroll', get_template_directory_uri() . '/assets/js/scroll.min.js', array(), null, true );
+	wp_enqueue_script( 'portfolio-scroll', 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js', array(), null, true );
 
 	// Enqueue image pop-up scripts (Magnific)
 	wp_enqueue_script( 'portfolio-magnific', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array( 'jquery' ), null, true );
