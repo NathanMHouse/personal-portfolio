@@ -15,7 +15,7 @@
 	?>
 	<div class="content-section container">
 		<div class="row">
-			<aside class="col-md-4">
+			<aside class="col-md-4 no-float">
 				<div class="table-of-contents">
 					<h2><?php _e( 'Table of Contents', 'portfolio' ); ?></h2>
 					<?php
@@ -33,7 +33,13 @@
 								continue;
 							}
 							?>
-							<li><a href="<?php echo esc_attr( $anchor ); ?>" data-scroll><?php echo esc_html( $title ); ?></a></li>
+							<li>
+								<a
+									href="<?php echo esc_attr( $anchor ); ?>"
+									data-scroll
+									data-id="<?php echo esc_attr( $anchor ); ?>"
+									><?php echo esc_html( $title ); ?></a>
+								</li>
 							<?php
 						}
 						?>
@@ -43,7 +49,7 @@
 					?>
 				</div>
 			</aside>
-			<div class="col-md-8">
+			<div class="col-md-8 no-float">
 				<?php
 				if ( have_rows( 'section' ) ) {
 					while ( have_rows( 'section' ) ) {
@@ -57,7 +63,7 @@
 							continue;
 						}
 						?>
-						<section id="<?php echo esc_attr( $id ); ?>">
+						<section id="<?php echo esc_attr( $id ); ?>" class="content-section__content">
 							<?php
 							if ( $title ) {
 							?>
