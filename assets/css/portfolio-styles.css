@@ -86,7 +86,7 @@ a:hover {
 
 .site-content,
 .site-content--front-page {
-	padding-top: 82px;
+	padding-top: 77px;
 }
 
 .fa.fa-7x {
@@ -112,7 +112,7 @@ a:hover {
 
 	h1 {
 		font-size: 48px;
-		line-height: 50px;
+		line-height: 52px;
 	}
 
 	h2 {
@@ -127,11 +127,7 @@ a:hover {
 
 	p {
 		font-size: 18px;
-		line-height: 30px;
-	}
-
-	.site-content {
-		padding-top: 134px;
+		line-height: 28px;
 	}
 
 	.site-content--front-page {
@@ -144,6 +140,16 @@ a:hover {
 
 	.hide-on-mobile {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 649px) {
+	.site-content {
+		padding-top: 134px;
+	}
+
+	.site-content--front-page {
+		padding-top: 82px;
 	}
 }
 
@@ -237,7 +243,7 @@ a:hover {
 
 #menu-inner h1 {
 	font-size: 24px;
-	line-height: 34px;
+	line-height: 29px;
 	margin: 0;
 }
 
@@ -498,6 +504,11 @@ a:hover {
 }
 
 @media (max-width: 991px) {
+	.modal-body li {
+		font-size: 18px;
+		line-height: 1em;
+	}
+
 	.modal-body .modal-skills {
 		padding: 60px 30px 30px;
 	}
@@ -682,6 +693,10 @@ a:hover {
 }
 
 @media screen and (max-width: 991px) {
+	.banner-section {
+		padding: 30px 0 60px;
+	}
+
 	.banner-content-text {
 		text-align: center;
 	}
@@ -690,11 +705,7 @@ a:hover {
 		margin: 30px 0 30px;
 		padding-bottom: 30px;
 	}
-
-	.banner-section h2 {
-		margin-bottom: 60px;
-	}
-
+	
 	.banner-content-icon {
 		margin-top: 50px;
 		padding: 60px 0 0 0;
@@ -757,6 +768,11 @@ a:hover {
 	.about-me-section {
 		margin-top: 60px;	
 	}
+
+	
+.about-me-section li {
+	font-size: 18px;
+}
 
 	.about-me-content-skills {
 		padding-top: 40px;
@@ -1012,6 +1028,7 @@ a:hover {
 
 @media screen and (max-width: 420px) {
 	.testimonial-section .testimonial-content-text {
+		margin: 60px 15px 0;
 		padding: 30px 15px;
 	}
 
@@ -1021,6 +1038,15 @@ a:hover {
 
 	.testimonial-content-text p:after {
 		content: normal;
+	}
+
+	.testimonial-content-title {
+		display: block;
+		text-align: center;
+	}
+
+	.testimonial-content-role {
+		text-align: center;
 	}
 }
 
@@ -1737,6 +1763,25 @@ a:hover {
 	padding: 60px 0 30px;
 }
 
+.table-of-contents {
+	display: none;
+}
+
+.table-of-contents.sticky,
+.table-of-contents.sticky-fixed {
+	width: 340px;
+}
+
+.table-of-contents.sticky {
+	bottom: initial;
+	position: fixed;
+}
+
+.table-of-contents.sticky-fixed {
+	bottom: 0;
+	position: absolute;
+}
+
 .table-of-contents h2 {
 	font-size: 26px;
 	margin: 0 0 20px;
@@ -1755,6 +1800,32 @@ a:hover {
 .table-of-contents ol li a,
 .table-of-contents ol li a:visited {
 	font-weight: 300;
+}
+
+.table-of-contents ol li a.active,
+.table-of-contents ol li a.active:visited {
+	font-weight: 600;
+}
+
+@media screen and (max-width: 1199px) {
+	.table-of-contents.sticky,
+	.table-of-contents.sticky-fixed {
+		width: 283px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.table-of-contents {
+		display: block;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.content-section h2,
+	.content-section h3,
+	.content-section h4 {
+		text-align: left;
+	}
 }
 
 /*--------------------------------------------------------------
