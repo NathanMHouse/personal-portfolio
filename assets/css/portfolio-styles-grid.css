@@ -19,6 +19,7 @@
 
 @media (min-width: 992px) {
     .container {
+        display: table;
         width: 970px
     }
 }
@@ -37,8 +38,16 @@
 }
 
 .row {
+    height: 100%;
     margin-left: -15px;
     margin-right: -15px
+}
+
+@media (min-width: 992px) {
+    .row > .no-float {
+        display: table-cell;
+        float: none;
+    }
 }
 
 .col-xs-1,
