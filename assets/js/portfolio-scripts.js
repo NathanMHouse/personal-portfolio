@@ -16,6 +16,8 @@
 6 Slick Image Carousel (Flexible Content)
 7 Magnific Image Pop-up
 8 Header Scroll Tracking
+9 Table of Contents Scroll Tracking
+10 Sticky Table of Contents
 
 --------------------------------------------------------------*/
 
@@ -23,27 +25,34 @@
 1 Smooth Scrolling Init
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
-	smoothScroll.init();
+	var scroll = new SmoothScroll(
+		//'[data-scroll]',
+		'a[href*="#"]',
+		{
+			header: '#masthead',
+			updateURL: false
+		}
+	);
 });
 
 /*--------------------------------------------------------------
 2 Footer Form Focus
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
-
-	// Vars
-	var ctaLinks		= $( 'a[href="#site-footer"]'),
-		firstInput 		= $( '#footer-contact-form :input' ).first();
-		
-	// Set callback function
-	function headerFormFocus() {
-
-		// Give first input focus
-		firstInput.focus();
+	function headerFormFocus(e) {
+		if(
+			e.detail.toggle.id === ''
+			&& e.detail.toggle.id !== 'header-cta'
+		) {
+			return;
+		} 
+	
+		$firstInput = $( '#footer-contact-form :input' ).first();
+		$firstInput.focus();
 	}
 
-	// Set event handler on cta click
-	ctaLinks.on( 'click', headerFormFocus );
+	// Custom event fired by scroll library
+	document.addEventListener('scrollStop', headerFormFocus, false);
 });
 
 /*--------------------------------------------------------------
@@ -223,4 +232,74 @@ jQuery( document ).ready(function($) {
 			$(siteHeader).removeClass('is-scrolled');
 		}
 	});
+});
+
+/*--------------------------------------------------------------
+9 Table of Contents Scroll Tracking
+--------------------------------------------------------------*/
+jQuery( document ).ready(function($) {
+	if ($('.table-of-contents').length <= 0) {
+		return;
+	}
+	
+	window.addEventListener('scroll', setActiveTableOfContentsItem);
+
+	const headerHeight = document.getElementById('masthead').offsetHeight;
+
+	function setActiveTableOfContentsItem() {
+		if ($(window).width() <= 991) return;
+
+		document.querySelectorAll('.content-section__content').forEach(el => {
+			if (el.getBoundingClientRect().y <= (headerHeight + 25)) {
+				$(`[data-id="#${el.id}"]`).addClass('active');
+			} else {
+				$(`[data-id="#${el.id}"]`).removeClass('active');
+			}
+		});
+	}
+});
+
+/*--------------------------------------------------------------
+10 Sticky Table of Contents
+--------------------------------------------------------------*/
+jQuery( document ).ready(function($) {
+	if ($('.table-of-contents').length <= 0) {
+		return;
+	}
+
+	const headerHeight            = document.getElementById('masthead').offsetHeight;
+	const contentHeight           = $('.content-section')[0].offsetHeight;
+	const $tableOfContents        = $('.table-of-contents');
+	const tableOfContentsPosition =  $tableOfContents.offset();
+
+	window.addEventListener('scroll', setStickyTableOfContent);
+
+	function setStickyTableOfContent() {
+		if ($(window).width() <= 991) return;
+
+		if (
+			window.scrollY >= (tableOfContentsPosition.top - headerHeight)
+			&& window.scrollY >= (contentHeight - 66)
+		) {
+			$tableOfContents.addClass('sticky-fixed');
+			$tableOfContents.removeClass('sticky');
+			$tableOfContents.css({
+				top: "initial"
+			})
+		} else if (
+			window.scrollY >= (tableOfContentsPosition.top - headerHeight)
+		) {
+			$tableOfContents.addClass('sticky');
+			$tableOfContents.removeClass('sticky-fixed');
+			$tableOfContents.css({
+				top: headerHeight + 10
+			});
+		} else if (window.scrollY < (tableOfContentsPosition.top - headerHeight)) {
+			$tableOfContents.removeClass('sticky');
+			$tableOfContents.removeClass('sticky-fixed');
+			$tableOfContents.css({
+				top: "initial"
+			})
+		}
+	}
 });
