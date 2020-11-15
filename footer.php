@@ -160,7 +160,7 @@ $social_github_link   = get_field( 'social_github_link', 'options' );
 <!-- Load Google Fonts -->
 <script type="text/javascript">
 	WebFontConfig = {
-		google: { families: [ 'Open+Sans:300,400,600' ] }
+		google: { families: [ 'Open+Sans:300,400,600', 'Inconsolata:300' ] }
 	};
 	(function() {
 		var wf = document.createElement('script');
