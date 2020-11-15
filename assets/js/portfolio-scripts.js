@@ -40,15 +40,13 @@ jQuery( document ).ready(function($) {
 --------------------------------------------------------------*/
 jQuery( document ).ready(function($) {
 	function headerFormFocus(e) {
-		if(
-			e.detail.toggle.id === ''
-			&& e.detail.toggle.id !== 'header-cta'
+		if (
+			e.detail.toggle.id === 'header-cta'
+			|| e.detail.toggle.id === 'header-inner-cta'
 		) {
-			return;
+			$firstInput = $( '#footer-contact-form :input' ).first();
+			$firstInput.focus();
 		} 
-	
-		$firstInput = $( '#footer-contact-form :input' ).first();
-		$firstInput.focus();
 	}
 
 	// Custom event fired by scroll library
@@ -250,7 +248,7 @@ jQuery( document ).ready(function($) {
 		if ($(window).width() <= 991) return;
 
 		document.querySelectorAll('.content-section__content').forEach(el => {
-			if (el.getBoundingClientRect().y <= (headerHeight + 25)) {
+			if (el.getBoundingClientRect().y <= (headerHeight + 50)) {
 				$(`[data-id="#${el.id}"]`).addClass('active');
 			} else {
 				$(`[data-id="#${el.id}"]`).removeClass('active');
