@@ -3,7 +3,6 @@
  *
  */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -31,9 +30,13 @@
 	6.8 CTA
 	6.9 CTA Alt
 7 Posts
+	7.1 General
+	7.2 Table of Contents
+	7.3 Endnotes
+	7.4 Code
+	7.5 Notes
 8 404
 9 Footer
-
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -55,9 +58,9 @@ h1 {
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 28px;
 	font-weight: 600;
-	line-height: 40px;
+	line-height: 36px;
 	margin: 0 0 20px;
 }
 
@@ -67,6 +70,21 @@ p {
 
 p:last-of-type {
 	margin: 0;
+}
+
+pre {
+	background-color: rgba(243, 243, 243, 0.5);
+	border-left: 4px solid #333;
+	margin-bottom: 30px;
+	overflow-x: hidden;
+	padding-right: 6rem;
+}
+
+code {
+	background-color: rgba(243, 243, 243, 0.5);
+	font-family: 'Inconsolata', monospace;
+	font-size: 1em;
+	padding: 0 4px 2px 4px;
 }
 
 a,
@@ -82,6 +100,39 @@ a:focus,
 a:hover {
 	color: #fe3a3c;
 	outline: 0;
+}
+
+thead {
+	background-color: rgba(243, 243, 243, 0.5);
+	border-top: 2px solid #f3f3f3;
+	border-right: 2px solid #f3f3f3;
+	border-bottom: 4px solid #333;
+	border-left: 2px solid #f3f3f3;
+}
+
+tr {
+	vertical-align: top;
+}
+
+tr:nth-of-type(even) {
+	background-color: rgba(243, 243, 243, 0.5);
+}
+
+td,
+th {
+	padding: 20px;
+	text-align: left;
+}
+
+td {
+	border-bottom: 2px solid #f3f3f3;
+}
+
+td:first-of-type {
+	border-left: 2px solid #f3f3f3;
+}
+td:last-of-type {
+	border-right: 2px solid #f3f3f3;
 }
 
 .site-content,
@@ -144,6 +195,20 @@ a:hover {
 }
 
 @media screen and (max-width: 649px) {
+	td,
+	th {
+		font-size: 18px;
+		line-height: 28px;
+		padding: 15px;
+	}
+	pre {
+		background-color: rgba(243, 243, 243, 0.5);
+		border-top: 4px solid #333;
+		border-left: none;
+		padding-top: 3.2rem;
+		padding-right: 1.6rem;
+	}
+
 	.site-content {
 		padding-top: 134px;
 	}
@@ -1747,6 +1812,9 @@ a:hover {
 /*--------------------------------------------------------------
 7 Posts
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+7.1 General
+--------------------------------------------------------------*/
 .post h2 {
 	margin: 0 0 10px;
 }
@@ -1763,6 +1831,17 @@ a:hover {
 	padding: 60px 0 30px;
 }
 
+@media screen and (max-width: 991px) {
+	.content-section h2,
+	.content-section h3,
+	.content-section h4 {
+		text-align: left;
+	}
+}
+
+/*--------------------------------------------------------------
+7.2 Table of Contents
+--------------------------------------------------------------*/
 .table-of-contents {
 	display: none;
 }
@@ -1820,11 +1899,137 @@ a:hover {
 	}
 }
 
-@media screen and (max-width: 991px) {
-	.content-section h2,
-	.content-section h3,
-	.content-section h4 {
-		text-align: left;
+/*--------------------------------------------------------------
+7.3 Endnotes
+--------------------------------------------------------------*/
+.endnote__note {
+	font-size: 17px;
+	line-height: 1.5rem;
+	padding-left: 2rem;
+	margin-bottom: .5rem;
+}
+
+.endnote__note a {
+	margin-left: -1.7rem;
+}
+
+.endnote__note a::before,
+.endnote__note a::after {
+	display: inline-block;
+	font-weight: 300;
+}
+
+.endnote__note a::before {
+	content: '[';
+}
+
+.endnote__note a::after {
+	content: ']';
+}
+
+@media screen and (max-width: 649px) {
+	.endnote__note {
+		padding-left: 1.5rem;
+	}
+
+	.endnote__note a {
+		margin-left: -1.5rem;
+	}
+}
+
+/*--------------------------------------------------------------
+7.4 Code
+--------------------------------------------------------------*/
+.code--input,
+.code--output {
+	position: relative;
+}
+
+.code--input::before,
+.code--output::before {
+	display: block;
+	font-size: 18px;
+	font-weight: 600;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+
+.code--input::before {
+	content: 'Input';
+}
+
+.code--output::before {
+	content: 'Output';
+}
+
+.code--input code,
+.code--output code {
+	background-color: transparent;
+	font-size: 20px;
+	line-height: 1.5;
+	padding: 0;
+	white-space: pre-wrap;
+	word-spacing: normal;
+	word-break: normal;
+}
+
+@media screen and (max-width: 649px) {
+	.code--input code,
+	.code--output code {
+		word-break: break-word;
+	}
+	.code--input::before,
+	.code--output::before {
+		font-size: 20px;
+		margin-bottom: .8rem;
+		left: 0;
+		right: 0;
+		text-align: center;
+		top: 1rem;
+	}
+}
+
+/*--------------------------------------------------------------
+7.5 Notes
+--------------------------------------------------------------*/
+.note {
+	background-color: rgba(204, 234, 244, .2);
+	border-left: 4px solid #71d3f4;
+	font-family: 'Inconsolata', monospace;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 30px;
+	padding: 1.6rem 6rem 1.6rem 1.6rem;
+	position: relative;
+}
+
+.note::before {
+	display: block;
+	color: #71d3f4;
+	content: 'Note';
+	font-size: 18px;
+	font-weight: 600;
+	position: absolute;
+	right: 20px;
+	top: 10px;
+}
+
+@media screen and (max-width: 649px) {
+	.note {
+		border-top: 4px solid #71d3f4;
+		border-left: none;
+		padding: 1rem 1.6rem 1.6rem;
+		word-break: break-word;
+	}
+	.note::before {
+		font-size: 20px;
+		margin-bottom: .8rem;
+		position: initial;
+		right: initial;
+		text-align: center;
+		top: initial;
 	}
 }
 
