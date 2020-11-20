@@ -1966,8 +1966,8 @@ td:last-of-type {
 .code--input code,
 .code--output code {
 	background-color: transparent;
-	font-size: 20px;
-	line-height: 1.5;
+	font-size: 17px;
+	line-height: 1.25;
 	padding: 0;
 	white-space: pre-wrap;
 	word-spacing: normal;
