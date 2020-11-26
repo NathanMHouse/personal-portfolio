@@ -2016,6 +2016,11 @@ td:last-of-type {
 	top: 10px;
 }
 
+.note code {
+	color: #fff;
+	background-color: #71d3f4;	
+}
+
 @media screen and (max-width: 649px) {
 	.note {
 		border-top: 4px solid #71d3f4;
