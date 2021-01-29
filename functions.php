@@ -259,3 +259,57 @@ function portfolio_trigger_form_handler() {
 	wp_die();
 
 }
+
+/**
+ * Alter Images Post Type Query
+ */
+add_action( 'pre_get_posts', 'portfolio_alter_images_query' );
+function portfolio_alter_images_query( $query ) {
+	if ( is_admin() ) {
+		return;
+	}
+
+	if ( ! $query->is_main_query() ) {
+		return;
+	}
+
+	if ( is_post_type_archive( 'pp_images' ) ) {
+		$query->set( 'posts_per_page', 50 );
+		return;
+	}
+}
+
+/**
+ * 
+ */
+add_filter( 'getarchives_where', 'modify_getarchives_where', 10, 2 );
+function modify_getarchives_where( $where, $args ) {
+	if ( isset( $args['post_type'] ) ) {
+		$where = "WHERE post_type = '$args[post_type]' AND post_status = 'publish'";
+	}
+
+	return $where;
+} 
+
+add_filter( 'generate_rewrite_rules', 'generate_pp_images_rewrite_rules' );
+function generate_pp_images_rewrite_rules( $wp_rewrite ) {
+	$pp_images_rules = array(
+		'art/?$' => 'index.php?post_type=pp_images',
+		'art/([0-9]{4})/?$' => 'index.php?post_type=pp_images&year=$matches[1]',
+		'art/([0-9]{4})/page/([0-9])/?$' => 'index.php?post_type=pp_images&year=$matches[1]&paged=$matches[2]',
+	);
+
+	$wp_rewrite->rules = $pp_images_rules + $wp_rewrite->rules;
+}
+
+add_filter( 'get_archives_link', 'modify_pp_images_archives_link', 10, 2 );
+function modify_pp_images_archives_link( $link_url ) {
+	global $post;
+
+	if ( $post->post_type !== 'pp_images' ) {
+		var_dump( 'foo' );
+		return;
+	}
+
+	return preg_replace( '/notes\/([0-9]{4})\/\?post_type=pp_images\/?/', 'art/${1}/', $link_url );
+}
