@@ -15,41 +15,7 @@
 	?>
 	<div class="content-section container">
 		<div class="row">
-			<aside class="col-md-4 no-float">
-				<div class="table-of-contents">
-					<h2><?php _e( 'Table of Contents', 'portfolio' ); ?></h2>
-					<?php
-					if ( have_rows( 'section' ) ) {
-						?>
-						<ol>
-						<?php
-						while ( have_rows( 'section' ) ) {
-							the_row();
-							
-							$title  = get_sub_field( 'title' );
-							$anchor = strtolower( str_replace( ' ', '-', "#$title" ) );
-
-							if ( empty( $title ) ) {
-								continue;
-							}
-							?>
-							<li>
-								<a
-									href="<?php echo esc_attr( $anchor ); ?>"
-									data-scroll
-									data-id="<?php echo esc_attr( $anchor ); ?>"
-									><?php echo esc_html( $title ); ?></a>
-								</li>
-							<?php
-						}
-						?>
-						</ol>
-						<?php
-					}
-					?>
-				</div>
-			</aside>
-			<div class="col-md-8 no-float">
+			<div class="col-md-10 col-md-offset-1">
 				<?php
 				if ( have_rows( 'section' ) ) {
 					while ( have_rows( 'section' ) ) {
