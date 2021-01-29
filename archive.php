@@ -7,44 +7,32 @@
  * @package Portfolio
  */
 
-get_header(); ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+get_header(); 
+	if ( have_posts() ) :
+		?>
+		<header class="page-header">
+			<?php
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+			?>
+		</header><!-- .page-header -->
 
 		<?php
-		if ( have_posts() ) :
-		?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+		// Start the loop
+		while ( have_posts() ) :
 
-			<?php
+			the_post();
+			get_template_part( 'template-parts/content', get_post_format() );
 
-			// Start the loop
-			while ( have_posts() ) :
+		endwhile;
 
-				the_post();
-				get_template_part( 'template-parts/content', get_post_format() );
+		the_posts_navigation();
 
-			endwhile;
+	else :
 
-			the_posts_navigation();
+		get_template_part( 'template-parts/content', 'none' );
 
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
+	endif;
 get_sidebar();
 get_footer();
