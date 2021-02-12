@@ -31,10 +31,10 @@
 	6.9 CTA Alt
 7 Posts
 	7.1 General
-	7.2 Table of Contents
-	7.3 Endnotes
-	7.4 Code
-	7.5 Notes
+	7.2 Archive
+	7.3 Single - Endnotes
+	7.4 Single - Code
+	7.5 Single - Notes
 8 Image Posts
 	8.1 General
 9 Pagination
@@ -144,7 +144,7 @@ td:last-of-type {
 
 .site-content,
 .site-content--front-page {
-	padding-top: 77px;
+	padding-top: 74px;
 }
 
 .fa.fa-7x {
@@ -189,7 +189,7 @@ td:last-of-type {
 	}
 
 	.site-content--front-page {
-		padding-top: 82px;
+		padding-top: 75px;
 	}
 
 	.fa.fa-mobile-5x {
@@ -217,11 +217,11 @@ td:last-of-type {
 	}
 
 	.site-content {
-		padding-top: 134px;
+		padding-top: 130px;
 	}
 
 	.site-content--front-page {
-		padding-top: 82px;
+		padding-top: 81px;
 	}
 }
 
@@ -1847,67 +1847,26 @@ td:last-of-type {
 }
 
 /*--------------------------------------------------------------
-7.2 Table of Contents
+7.2 Archive
 --------------------------------------------------------------*/
-.table-of-contents {
-	display: none;
-}
-
-.table-of-contents.sticky,
-.table-of-contents.sticky-fixed {
-	width: 340px;
-}
-
-.table-of-contents.sticky {
-	bottom: initial;
-	position: fixed;
-}
-
-.table-of-contents.sticky-fixed {
-	bottom: 0;
-	position: absolute;
-}
-
-.table-of-contents h2 {
-	font-size: 26px;
-	margin: 0 0 20px;
-}
-
-.table-of-contents ol {
+.posts {
+	list-style: none;
 	margin: 0;
-	padding: 0 0 0 1.6rem;
+	padding: 0;
 }
 
-.table-of-contents ol li {
-	line-height: 1.25;
-	margin: 0 0 8px;
+.posts__post {
+	border-bottom: 1px solid #f3f3f3;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
 }
 
-.table-of-contents ol li a,
-.table-of-contents ol li a:visited {
-	font-weight: 300;
-}
-
-.table-of-contents ol li a.active,
-.table-of-contents ol li a.active:visited {
-	font-weight: 600;
-}
-
-@media screen and (max-width: 1199px) {
-	.table-of-contents.sticky,
-	.table-of-contents.sticky-fixed {
-		width: 283px;
-	}
-}
-
-@media screen and (min-width: 992px) {
-	.table-of-contents {
-		display: block;
-	}
+.posts__post:last-child {
+	border-bottom: 0;
 }
 
 /*--------------------------------------------------------------
-7.3 Endnotes
+7.3 Single - Endnotes
 --------------------------------------------------------------*/
 .endnote__note {
 	font-size: 17px;
@@ -1945,7 +1904,7 @@ td:last-of-type {
 }
 
 /*--------------------------------------------------------------
-7.4 Code
+7.4 Single - Code
 --------------------------------------------------------------*/
 .code--input,
 .code--output {
@@ -1998,7 +1957,7 @@ td:last-of-type {
 }
 
 /*--------------------------------------------------------------
-7.5 Notes
+7.5 Single - Notes
 --------------------------------------------------------------*/
 .note {
 	background-color: rgba(204, 234, 244, .2);
@@ -2304,6 +2263,10 @@ footer .footer-contact-form {
 }
 
 @media screen and (max-width: 800px) {
+	footer {
+		border-top: 2px solid #f3f3f3;
+	}
+
 	footer .container {
 		width: 100%;
 	}
